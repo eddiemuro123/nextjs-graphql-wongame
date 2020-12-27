@@ -1,6 +1,6 @@
 {
-  "name": "React Avançado - Boilerplate",
-  "short_name": "React Avançado",
+  "name": "Won Games",
+  "short_name": "Won Games",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#06092B",
-  "description": "Boilerplate utilizando Typescript, React, NextJS e Styled Components!",
+  "description": "Won Games | Your games ecommerce!",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#06092B"
