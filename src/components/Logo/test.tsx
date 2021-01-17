@@ -10,4 +10,11 @@ describe('<Logo />', () => {
       color: '#FAFAFA'
     })
   })
+
+  it('should render a black label by default', () => {
+    renderWithTheme(<Logo color="black" />)
+    expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
+      color: '#030517'
+    })
+  })
 })
