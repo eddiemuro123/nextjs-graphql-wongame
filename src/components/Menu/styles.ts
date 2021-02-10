@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
+type MenuFullProps = {
+  isOpen: boolean
+}
+
 export const Wrapper = styled.menu`
   ${({ theme }) => css`
     display: flex;
@@ -39,5 +43,11 @@ export const MenuGroup = styled.div`
     > div {
       margin-left: ${theme.spacings.xsmall};
     }
+  `}
+`
+
+export const MenuFull = styled.nav<MenuFullProps>`
+  ${({ isOpen }) => css`
+    opacity: ${isOpen ? 1 : 0};
   `}
 `
