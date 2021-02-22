@@ -13,7 +13,7 @@ const props = {
 
 describe('<Highlight />', () => {
   it('should render headings and buttons', () => {
-    const { container } = renderWithTheme(<Highlight {...props} />)
+    renderWithTheme(<Highlight {...props} />)
 
     expect(
       screen.getByRole('heading', { name: /Heading 1/i })
@@ -33,5 +33,14 @@ describe('<Highlight />', () => {
     expect(container.firstChild).toHaveStyle({
       backgroundImage: `url(${props.backgroundImage})`
     })
+  })
+
+  it('should render float image', () => {
+    renderWithTheme(<Highlight {...props} floatImage="/float-image.png" />)
+
+    expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
+      'src',
+      '/float-image.png'
+    )
   })
 })

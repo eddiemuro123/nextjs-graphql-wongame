@@ -1,10 +1,11 @@
 import Button from '../Button/index'
 import * as S from './styles'
 
-export type HightLightProps = {
+export type HighLightProps = {
   title: string
   subtitle: string
   backgroundImage: string
+  floatImage?: string
   buttonLabel: string
   buttonLink: string
 }
@@ -14,9 +15,11 @@ const Highlight = ({
   subtitle,
   buttonLabel,
   buttonLink,
+  floatImage,
   backgroundImage
-}: HightLightProps) => (
+}: HighLightProps) => (
   <S.Wrapper backgroundImage={backgroundImage}>
+    {!!floatImage && <S.FloatImage src={floatImage} alt={title} />}
     <S.Content>
       <S.Title>{title}</S.Title>
       <S.Subtitle>{subtitle}</S.Subtitle>
