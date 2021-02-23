@@ -8,6 +8,7 @@ export type HighLightProps = {
   floatImage?: string
   buttonLabel: string
   buttonLink: string
+  alignment?: 'right' | 'left'
 }
 
 const Highlight = ({
@@ -16,9 +17,10 @@ const Highlight = ({
   buttonLabel,
   buttonLink,
   floatImage,
-  backgroundImage
+  backgroundImage,
+  alignment = 'right'
 }: HighLightProps) => (
-  <S.Wrapper backgroundImage={backgroundImage}>
+  <S.Wrapper backgroundImage={backgroundImage} alignment={alignment}>
     {!!floatImage && <S.FloatImage src={floatImage} alt={title} />}
     <S.Content>
       <S.Title>{title}</S.Title>
