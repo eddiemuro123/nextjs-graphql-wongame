@@ -4,6 +4,22 @@ type PriceProps = {
   isPromotional?: boolean
 }
 
+const priceModifiers = {
+  default: (theme: DefaultTheme) => css`
+    color: ${theme.colors.white};
+    padding: 0 ${theme.spacings.xxsmall};
+    background-color: ${theme.colors.secondary};
+    border-radius: ${theme.border.radius};
+    margin-right: calc(${theme.spacings.xxsmall} / 2);
+  `,
+
+  promotional: (theme: DefaultTheme) => css`
+    color: ${theme.colors.gray};
+    text-decoration: line-through;
+    margin-right: ${theme.spacings.xsmall};
+  `
+}
+
 export const Wrapper = styled.article`
   ${({ theme }) => css`
     position: relative;
@@ -97,22 +113,6 @@ export const BuyBox = styled.div`
     margin-top: ${theme.spacings.xxsmall};
   `}
 `
-
-const priceModifiers = {
-  default: (theme: DefaultTheme) => css`
-    color: ${theme.colors.white};
-    padding: 0 ${theme.spacings.xxsmall};
-    background-color: ${theme.colors.secondary};
-    border-radius: ${theme.border.radius};
-    margin-right: calc(${theme.spacings.xxsmall} / 2);
-  `,
-
-  promotional: (theme: DefaultTheme) => css`
-    color: ${theme.colors.gray};
-    text-decoration: line-through;
-    margin-right: ${theme.spacings.xsmall};
-  `
-}
 
 export const Price = styled.div<PriceProps>`
   ${({ theme, isPromotional }) => css`
