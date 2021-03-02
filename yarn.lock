@@ -1383,21 +1383,14 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@7.12.5", "@babel/runtime@^7.12.5":
+"@babel/runtime@7.12.5":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
-  version "7.11.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
-  integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
-"@babel/runtime@^7.10.5", "@babel/runtime@^7.12.13":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.13.9"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.9.tgz#97dbe2116e2630c489f22e0656decd60aaa1fcee"
   integrity sha512-aY2kU+xgJ3dJ1eU6FMB9EH8dIe8dmusF1xEku52joLvw6eAFN0AI+WxCLDnpev2LEejWBAy2sBvBOBAjI3zmvA==
@@ -2987,12 +2980,12 @@
     resolve-from "^5.0.0"
     store2 "^2.7.1"
 
-"@styled-icons/bootstrap@10.25.0":
-  version "10.25.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/bootstrap/-/bootstrap-10.25.0.tgz#a08a2a099a4e67f9cc2295b3bf2e112fbc899880"
-  integrity sha512-LhWbhYSZJRXWfK7QMJD2ZJD0nu7YFHhj0WDoZ7FFWCie8VFNHeUMqmzrFZnaHOzrsN6DfICLglYmnNS3cYRuTA==
+"@styled-icons/bootstrap@10.29.0":
+  version "10.29.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/bootstrap/-/bootstrap-10.29.0.tgz#0f727581013ab020e7d8bb2e158430b0ee3b266d"
+  integrity sha512-B6UhU2p8zpAKBMLDmxgoXlHbODrvz8MM8nRLIGpCIWJ8rMen6a1FQJj22vKOL4ppC4A0hy2/IgBEc1gVwOdwiw==
   dependencies:
-    "@babel/runtime" "^7.12.5"
+    "@babel/runtime" "^7.12.13"
     "@styled-icons/styled-icon" "^10.6.0"
 
 "@styled-icons/boxicons-logos@10.23.0":
@@ -3227,10 +3220,10 @@
     "@babel/runtime" "^7.10.5"
     "@styled-icons/styled-icon" "^10.6.0"
 
-"@styled-icons/simple-icons@10.28.0":
-  version "10.28.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/simple-icons/-/simple-icons-10.28.0.tgz#0be224b9ae9b834c3000bfc9248a254bc983d79d"
-  integrity sha512-JzGwayEOf9sjKDoUDnZYhGeLJDT/gvIZShRktoDMxfeQC3+QfDbozOk4dS9oPp7crHgn7Q8nhkQQ29ucAZXRKg==
+"@styled-icons/simple-icons@10.29.0":
+  version "10.29.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/simple-icons/-/simple-icons-10.29.0.tgz#eb0dbb52c070f9a65668b525889a7cd43b7ca17c"
+  integrity sha512-TkNb6HII1xjmjlapY2msn8G+neLs6XYA3IclSR19Te5BLM8Su+Ct2unArSXoQym9W+SeiMnfjPI0dkAj9zY/Rw==
   dependencies:
     "@babel/runtime" "^7.12.13"
     "@styled-icons/styled-icon" "^10.6.0"
@@ -13506,13 +13499,13 @@ styled-components@5.2.1:
     shallowequal "^1.1.0"
     supports-color "^5.5.0"
 
-styled-icons@^10.27.0:
-  version "10.28.0"
-  resolved "https://registry.yarnpkg.com/styled-icons/-/styled-icons-10.28.0.tgz#cd071ab0dd10d085d9c54807cfb7b69136f812f7"
-  integrity sha512-vswzg2DDtJ5IJnvnV3b5dhLCV82G4ss94gP9bzwBHrkAK94INVw4R8/WBpz/GLTFWqG1/s83W/hEafIz0vsouA==
+styled-icons@^10.29.0:
+  version "10.29.0"
+  resolved "https://registry.yarnpkg.com/styled-icons/-/styled-icons-10.29.0.tgz#d516590535f7dd2d1ad2aebc2f74f54d0a75b2fc"
+  integrity sha512-OlKqKvQvP6JSRIPGpAYh69b7Oj9JYzfuCesKpGj4eqHkC8iV8ibQp8mElIoK6y+5B7+aKSIEbHGRzHH6C7PYpg==
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@styled-icons/bootstrap" "10.25.0"
+    "@styled-icons/bootstrap" "10.29.0"
     "@styled-icons/boxicons-logos" "10.23.0"
     "@styled-icons/boxicons-regular" "10.23.0"
     "@styled-icons/boxicons-solid" "10.23.0"
@@ -13542,7 +13535,7 @@ styled-icons@^10.27.0:
     "@styled-icons/open-iconic" "10.18.0"
     "@styled-icons/remix-fill" "10.18.0"
     "@styled-icons/remix-line" "10.18.0"
-    "@styled-icons/simple-icons" "10.28.0"
+    "@styled-icons/simple-icons" "10.29.0"
     "@styled-icons/styled-icon" "10.6.3"
     "@styled-icons/typicons" "10.18.0"
     "@styled-icons/zondicons" "10.18.0"
