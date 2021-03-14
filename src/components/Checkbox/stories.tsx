@@ -6,6 +6,12 @@ export default {
   component: Checkbox,
   argTypes: {
     onCheck: { action: 'checked' }
+  },
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'won-dark'
+    }
   }
 } as Meta
 
