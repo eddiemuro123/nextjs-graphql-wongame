@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> should render with label 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0.2rem solid #2E2F42;
+  border-radius: 0.2rem;
+  -webkit-transition: background border 0.1s ease-in-out;
+  transition: background border 0.1s ease-in-out;
+  position: relative;
+  outline: none;
+}
+
+.c1:before {
+  content: '';
+  width: 0.6rem;
+  height: 0.9rem;
+  border: 0.2rem solid #FAFAFA;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0.1rem;
+  opacity: 0;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.c1:focus {
+  border: 0.2rem solid #F231A5;
+}
+
+.c1:checked {
+  border-color: #F231A5;
+  background: #F231A5;
+}
+
+.c1:checked:before {
+  opacity: 1;
+}
+
+.c2 {
+  color: #FAFAFA;
+  cursor: pointer;
+  padding-left: 0.8rem;
+  line-height: 1.8rem;
+}
+
+<div
+  class="c0"
+>
+  <input
+    class="c1"
+    id="check"
+    type="checkbox"
+    value=""
+  />
+  <label
+    class="c2"
+    for="check"
+  >
+    checkbox label
+  </label>
+</div>
+`;
