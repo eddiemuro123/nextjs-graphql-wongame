@@ -1,9 +1,22 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import { TextFieldProps } from '.'
 
-export type iconPositionProps = Pick<TextFieldProps, 'iconPosition'>
+export type IconPositionProps = Pick<TextFieldProps, 'iconPosition'>
+export type WrapperProps = Pick<TextFieldProps, 'disabled'> & {
+  error?: boolean
+}
 
 const wrapperModifiers = {
+  error: (theme: DefaultTheme) => css`
+    ${InputWrapper} {
+      border-color: ${theme.colors.red};
+    }
+
+    ${Label},
+    ${Icon} {
+      color: ${theme.colors.red};
+    }
+  `,
   disabled: (theme: DefaultTheme) => css`
     ${Label},
     ${Input},
@@ -32,7 +45,7 @@ export const InputWrapper = styled.div`
   `}
 `
 
-export const Input = styled.input<iconPositionProps>`
+export const Input = styled.input<IconPositionProps>`
   ${({ theme, iconPosition }) => css`
     color: ${theme.colors.black};
     font-family: ${theme.font.family};
@@ -54,13 +67,14 @@ export const Label = styled.label`
   `}
 `
 
-export const Wrapper = styled.div<Pick<TextFieldProps, 'disabled'>>`
-  ${({ theme, disabled }) => css`
+export const Wrapper = styled.div<WrapperProps>`
+  ${({ theme, disabled, error }) => css`
+    ${!!error && wrapperModifiers.error(theme)};
     ${!!disabled && wrapperModifiers.disabled(theme)}
   `}
 `
 
-export const Icon = styled.div<iconPositionProps>`
+export const Icon = styled.div<IconPositionProps>`
   ${({ theme, iconPosition }) => css`
     display: flex;
     width: 2.2rem;
@@ -70,5 +84,12 @@ export const Icon = styled.div<iconPositionProps>`
     & > svg {
       width: 100%;
     }
+  `}
+`
+
+export const Error = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.red};
+    font-size: ${theme.font.sizes.xsmall};
   `}
 `
