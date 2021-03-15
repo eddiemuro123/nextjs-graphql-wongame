@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Auth /> should render the heading 1`] = `
+<main
+  class=""
+>
+  <h1>
+    Auth
+  </h1>
+</main>
+`;
