@@ -88,7 +88,7 @@ exports[`<Footer /> should render 4 column topics 1`] = `
     >
       <path
         d="M.0547602 15.2273l-.0354753 20.645C.0110436 40.6683 5.35471 43.5351 9.34604 40.8758L29.9416 27.1541l20.5483 13.7925c3.9822 2.6729 9.3356-.1755 9.3439-4.9715l.0343-19.9972c.0136-7.88161-7.5487-13.56538-15.1158-11.36093l-.8732.2544c-9.6 2.79669-19.8112 2.70243-29.358-.27101C7.35072 2.36704.0676653 7.71714.0547602 15.2273z"
-        fill="url(#paint0_linear)"
+        fill="url(#paint0_linear_logo)"
       />
       <path
         d="M30.1635 27.1596l-6.0335-4.292c-.3646-.2594-.8603.054-.7822.4946l1.2931 7.2974 5.5226-3.5z"
@@ -140,7 +140,7 @@ exports[`<Footer /> should render 4 column topics 1`] = `
       <defs>
         <lineargradient
           gradientUnits="userSpaceOnUse"
-          id="paint0_linear"
+          id="paint0_linear_logo"
           x1="29.1592"
           x2="30.1547"
           y1="-7.39708"
