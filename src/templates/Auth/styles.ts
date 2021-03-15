@@ -48,6 +48,11 @@ export const BannerContent = styled.div`
     position: relative;
     z-index: ${theme.layers.base};
     color: ${theme.colors.white};
+
+    a {
+      width: fit-content;
+      height: fit-content;
+    }
   `}
 `
 
