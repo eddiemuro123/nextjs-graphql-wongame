@@ -30,9 +30,7 @@ const Home = ({
   mostPopularGames,
   upcommingGames,
   upcommingHighligth,
-  upcommingMoreGames,
-  freeGames,
-  freeHighligth
+  upcommingMoreGames
 }: HomeTemplateProps) => (
   <section>
     <Container>
@@ -71,16 +69,6 @@ const Home = ({
         <Highlight {...upcommingHighligth} />
         <GameCardSlider items={upcommingMoreGames} />
       </S.SectionUpcoming>
-    </Container>
-
-    <Container>
-      <S.SectionFreeGames>
-        <Heading lineLeft lineColor="secondary">
-          Free games
-        </Heading>
-        <Highlight {...freeHighligth} />
-        <GameCardSlider items={freeGames} />
-      </S.SectionFreeGames>
     </Container>
 
     <S.SectionFooter>
