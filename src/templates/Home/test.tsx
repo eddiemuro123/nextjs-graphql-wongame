@@ -37,11 +37,8 @@ describe('<Home />', () => {
     expect(
       screen.getByRole('heading', { name: /upcomming/i })
     ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /free games/i })
-    ).toBeInTheDocument()
     expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1)
-    expect(screen.getAllByText(/population zero/i)).toHaveLength(5)
-    expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(3)
+    expect(screen.getAllByText(/population zero/i)).toHaveLength(4)
+    expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(2)
   })
 })
