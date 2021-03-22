@@ -10,35 +10,59 @@ import Home from '.'
 
 const props = {
   banners: bannerMock,
-  newGames: [gamesMock[0]],
+  newGames: gamesMock,
   mostPopularHighlight: highlightMock,
-  mostPopularGames: [gamesMock[0]],
-  upcommingGames: [gamesMock[0]],
-  upcommingHighligth: highlightMock,
-  upcommingMoreGames: [gamesMock[0]],
-  freeGames: [gamesMock[0]],
-  freeHighligth: highlightMock
+  mostPopularGames: gamesMock,
+  upcommingGames: gamesMock,
+  upcommingHighlight: highlightMock,
+  upcommingMoreGames: gamesMock,
+  freeGames: gamesMock,
+  freeHighlight: highlightMock
 }
+
+jest.mock('components/Menu', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Mock Menu"></div>
+    }
+  }
+})
+
+jest.mock('components/Footer', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Mock Footer"></div>
+    }
+  }
+})
+
+jest.mock('components/Showcase', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Mock Showcase"></div>
+    }
+  }
+})
+
+jest.mock('components/BannerSlide', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Mock Banner Slider"></div>
+    }
+  }
+})
 
 describe('<Home />', () => {
   it('should render menu and footer', () => {
     renderWithTheme(<Home {...props} />)
 
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /follow us/i })
-    ).toBeInTheDocument()
-    expect(screen.getAllByRole('img', { name: /won games/i })).toHaveLength(2)
-
-    expect(screen.getByRole('heading', { name: /news/i })).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /most popular/i })
-    ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /upcomming/i })
-    ).toBeInTheDocument()
-    expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1)
-    expect(screen.getAllByText(/population zero/i)).toHaveLength(4)
-    expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(2)
+    expect(screen.getByTestId('Mock Menu')).toBeInTheDocument()
+    expect(screen.getByTestId('Mock Banner Slider')).toBeInTheDocument()
+    expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(5)
+    expect(screen.getByTestId('Mock Footer')).toBeInTheDocument()
   })
 })
