@@ -30,7 +30,7 @@
     "react-dom": "17.0.1",
     "react-slick": "^0.28.1",
     "styled-components": "5.2.3",
-    "styled-icons": "^10.29.0",
+    "styled-icons": "^10.32.0",
     "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
