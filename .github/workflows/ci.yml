@@ -19,11 +19,11 @@ jobs:
       - name: Linting
         run: yarn lint
 
-      - name: Test
-        run: yarn test
-
       - name: Update Test
         run: yarn test -u
+
+      - name: Test
+        run: yarn test
 
       - name: Build
         run: yarn build
