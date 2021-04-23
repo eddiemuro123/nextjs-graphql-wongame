@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Highlight /> should render headings and buttons 1`] = `
+.c5 {
+  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  color: #FAFAFA;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  cursor: pointer;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 4rem;
+  font-size: 1.4rem;
+  padding: 0.8rem 3.2rem;
+}
+
+.c5:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
+.c0 {
+  position: relative;
+  height: 23rem;
+  display: grid;
+  background-image: url(/img/red-dead-img.jpg);
+  background-position: center center;
+  background-size: cover;
+  grid-template-areas: 'floatimage content';
+}
+
+.c0::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.c0 .c1 {
+  text-align: right;
+}
+
+.c2 {
+  grid-area: content;
+  z-index: 10;
+  padding: 1.6rem;
+}
+
+.c3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FAFAFA;
+}
+
+.c4 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #FAFAFA;
+  margin-bottom: 3.2rem;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    height: 32rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    -webkit-align-self: end;
+    -ms-flex-item-align: end;
+    align-self: end;
+    padding: 4.0rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    font-size: 1.8rem;
+  }
+}
+
+<section
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <h2
+      class="c3"
+    >
+      Heading 1
+    </h2>
+    <h3
+      class="c4"
+    >
+      Heading 2
+    </h3>
+    <a
+      class="c5"
+      href="/rdr2"
+    >
+      <span>
+        Buy now
+      </span>
+    </a>
+  </div>
+</section>
+`;

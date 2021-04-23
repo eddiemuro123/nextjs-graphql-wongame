@@ -1,0 +1,498 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BannerSlide /> should render vertical slider 1`] = `
+.c5 {
+  position: absolute;
+  top: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
+  color: #FAFAFA;
+  background-color: #F231A5;
+  font-size: 1.4rem;
+  height: 3.6rem;
+  padding: 0 2.4rem;
+  right: -2rem;
+}
+
+.c5::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-style: solid;
+  border-left-width: 0rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-bottom-width: 1rem;
+}
+
+.c5::before {
+  border-left-color: #b20b6f;
+  border-top-color: #b20b6f;
+}
+
+.c5::before {
+  top: 3.6rem;
+  border-top-width: 1rem;
+  border-right-width: 2rem;
+}
+
+.c10 {
+  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  color: #FAFAFA;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  cursor: pointer;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 5rem;
+  font-size: 1.6rem;
+  padding: 0.8rem 4.8rem;
+}
+
+.c10:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
+.c3 {
+  position: relative;
+}
+
+.c6 {
+  width: 100%;
+  height: 23rem;
+  background-color: #EAEAEA;
+  background-image: url(https://source.unsplash.com/user/willianjusten/1042x580);
+  background-position: center center;
+  background-size: cover;
+}
+
+.c11 {
+  width: 100%;
+  height: 23rem;
+  background-color: #EAEAEA;
+  background-image: url(https://source.unsplash.com/user/willianjusten/1042x582);
+  background-position: center center;
+  background-size: cover;
+}
+
+.c7 {
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  padding: 2.4rem;
+}
+
+.c8 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FAFAFA;
+}
+
+.c9 {
+  color: #FAFAFA;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1.6rem;
+}
+
+.c9 strong {
+  color: #F231A5;
+  font-weight: 600;
+}
+
+.c1 .slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.c1 .slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.c1 .slick-list:focus {
+  outline: none;
+}
+
+.c1 .slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.c1 .slick-slider .slick-track,
+.c1 .slick-slider .slick-list {
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.c1 .slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.c1 .slick-track:before,
+.c1 .slick-track:after {
+  display: table;
+  content: '';
+}
+
+.c1 .slick-track:after {
+  clear: both;
+}
+
+.c1 .slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.c1 .slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+.c1 [dir='rtl'] .slick-slide {
+  float: right;
+}
+
+.c1 .slick-slide img {
+  display: block;
+}
+
+.c1 .slick-slide.slick-loading img {
+  display: none;
+}
+
+.c1 .slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.c1 .slick-initialized .slick-slide {
+  display: block;
+}
+
+.c1 .slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.c1 .slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.c1 .slick-arrow.slick-hidden {
+  display: none;
+}
+
+.c0 .slick-dots {
+  list-style: none;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 2.4rem;
+}
+
+.c0 .slick-dots li {
+  background: #FAFAFA;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 0.8rem;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+
+.c0 .slick-dots li.slick-active {
+  background: #F231A5;
+}
+
+.c0 .slick-dots button {
+  opacity: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+@media (max-width:1170px) {
+  .c3 .c4 {
+    right: 0;
+  }
+
+  .c3 .c4::before {
+    display: none;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    box-shadow: 0 0.4rem 0.5rem 0 rgba(0,0,0,0.2);
+  }
+}
+
+@media (min-width:768px) {
+  .c6 {
+    height: 58rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c11 {
+    height: 58rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c7 {
+    border-radius: 0 0 0.4rem 0.4rem;
+    padding: 4.0rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c8 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c9 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1170px) {
+  .c0 .c2 {
+    max-width: 104rem;
+    margin: 0 auto;
+  }
+
+  .c0 .slick-dots {
+    position: absolute;
+    right: 0;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    top: 0;
+    margin: 0;
+  }
+
+  .c0 .slick-dots li {
+    margin: 0.8rem 0;
+  }
+}
+
+<section
+  class="c0"
+>
+  <section
+    class="c1"
+  >
+    <div
+      class="slick-slider slick-vertical slick-initialized"
+      dir="ltr"
+    >
+      <div
+        class="slick-list"
+        style="height: 0px;"
+      >
+        <div
+          class="slick-track"
+          style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+        >
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active slick-current"
+            data-index="0"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <main
+                class="c2 c3"
+              >
+                <div
+                  class="c4 c5"
+                  color="primary"
+                >
+                  Bestselling
+                </div>
+                <div
+                  aria-label="Defy death 1"
+                  class="c6"
+                  role="img"
+                  src="https://source.unsplash.com/user/willianjusten/1042x580"
+                />
+                <div
+                  class="c7"
+                >
+                  <h2
+                    class="c8"
+                  >
+                    Defy death 1
+                  </h2>
+                  <h3
+                    class="c9"
+                  >
+                    <p>
+                      Play the new 
+                      <strong>
+                        CrashLands
+                      </strong>
+                       season
+                    </p>
+                  </h3>
+                  <a
+                    class="c10"
+                    href="/games/defy-death"
+                  >
+                    <span>
+                      Buy now
+                    </span>
+                  </a>
+                </div>
+              </main>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="slick-slide"
+            data-index="1"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <main
+                class="c2 c3"
+              >
+                <div
+                  aria-label="Defy death 2"
+                  class="c11"
+                  role="img"
+                  src="https://source.unsplash.com/user/willianjusten/1042x582"
+                />
+                <div
+                  class="c7"
+                >
+                  <h2
+                    class="c8"
+                  >
+                    Defy death 2
+                  </h2>
+                  <h3
+                    class="c9"
+                  >
+                    <p>
+                      Play the new 
+                      <strong>
+                        CrashLands
+                      </strong>
+                       season
+                    </p>
+                  </h3>
+                  <a
+                    class="c10"
+                    href="/games/defy-death"
+                  >
+                    <span>
+                      Buy now
+                    </span>
+                  </a>
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul
+        class="slick-dots"
+        style="display: block;"
+      >
+        <li
+          class="slick-active"
+        >
+          <button>
+            1
+          </button>
+        </li>
+        <li
+          class=""
+        >
+          <button>
+            2
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
+`;
