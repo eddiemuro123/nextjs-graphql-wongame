@@ -15,7 +15,7 @@ const props = {
 
 describe('<Showcase />', () => {
   it('should render full showcase', () => {
-    renderWithTheme(<Showcase {...props} />)
+    const { container } = renderWithTheme(<Showcase {...props} />)
 
     expect(
       screen.getByRole('heading', { name: /most popular/i })
@@ -28,6 +28,8 @@ describe('<Showcase />', () => {
     expect(
       screen.getByRole('heading', { name: gamesMock[0].title })
     ).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render without title', () => {

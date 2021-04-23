@@ -27,6 +27,7 @@ describe('<BannerSlide />', () => {
     const { container } = renderWithTheme(<BannerSlide items={items} />)
 
     expect(container.querySelector('.slick-vertical')).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render with 1 active item', () => {

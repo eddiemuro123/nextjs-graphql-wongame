@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Heading /> should render a white heading by default 1`] = `
+.c0 {
+  color: #FAFAFA;
+  font-size: 2.0rem;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    font-size: 2.8rem;
+  }
+}
+
+<h2
+  class="c0"
+  color="white"
+>
+  Won Games
+</h2>
+`;
