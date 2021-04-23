@@ -22,5 +22,8 @@ jobs:
       - name: Test
         run: yarn test
 
+      - name: Update Test
+        run: yarn test -u
+
       - name: Build
         run: yarn build
