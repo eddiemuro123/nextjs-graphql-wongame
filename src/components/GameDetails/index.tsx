@@ -38,8 +38,8 @@ const GameDetails = ({
 
       <S.Content>
         <S.Block>
-          <S.Label>{developer}</S.Label>
-          <S.Description>Gearbox Software</S.Description>
+          <S.Label>Developer</S.Label>
+          <S.Description>{developer}</S.Description>
         </S.Block>
 
         <S.Block>

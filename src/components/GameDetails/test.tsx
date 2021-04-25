@@ -16,7 +16,7 @@ describe('<GameDetails />', () => {
     renderWithTheme(<GameDetails {...props} />)
 
     expect(
-      screen.getByRole('heading', { name: /Different Tales/i })
+      screen.getByRole('heading', { name: /Developer/i })
     ).toBeInTheDocument()
     expect(
       screen.getByRole('heading', { name: /Release Date/i })
