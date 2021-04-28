@@ -53,8 +53,43 @@ export const Wrapper = styled.div`
 `
 
 export const Modal = styled.div<ModalProps>`
-  ${({ isOpen }) => css`
+  ${({ theme, isOpen }) => css`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: ${theme.layers.modal};
+    transition: opacity ${theme.transition.default};
+
     ${isOpen && modalModifiers.open()}
     ${!isOpen && modalModifiers.close()}
+  `}
+`
+
+export const Close = styled.div`
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+
+    svg {
+      border-radius: 100%;
+      transition: all 0.3s ease;
+      padding: 6px;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+    }
   `}
 `
