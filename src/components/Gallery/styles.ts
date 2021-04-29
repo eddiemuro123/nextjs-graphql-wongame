@@ -82,7 +82,7 @@ export const Close = styled.div`
     height: 100%;
     text-align: right;
 
-    svg {
+    > svg {
       border-radius: 100%;
       transition: all 0.3s ease;
       padding: 6px;
@@ -92,4 +92,9 @@ export const Close = styled.div`
       }
     }
   `}
+`
+
+export const Content = styled.div`
+  max-width: min(120rem, 100%);
+  max-height: 80rem;
 `

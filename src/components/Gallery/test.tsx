@@ -18,6 +18,16 @@ describe('<Gallery />', () => {
     ).toHaveAttribute('src', mockItems[1].src)
   })
 
+  it('should open modal with selected image', async () => {
+    renderWithTheme(<Gallery items={mockItems.slice(0, 2)} />)
+
+    fireEvent.click(
+      screen.getByRole('button', { name: /Thumb - Gallery Image 2/i })
+    )
+    const img = await screen.findByRole('img', { name: /Gallery Image 2/i })
+    expect(img.parentElement?.parentElement).toHaveClass('slick-active')
+  })
+
   it('should handle open modal', () => {
     renderWithTheme(<Gallery items={mockItems.slice(0, 2)} />)
 
