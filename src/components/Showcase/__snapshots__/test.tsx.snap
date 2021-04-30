@@ -408,6 +408,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
 }
 
 .c0 {
+  width: 100%;
   max-width: 130rem;
   margin-right: auto;
   margin-left: auto;

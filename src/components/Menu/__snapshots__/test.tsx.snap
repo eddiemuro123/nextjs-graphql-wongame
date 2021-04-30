@@ -99,6 +99,7 @@ exports[`<Menu /> should render the menu 1`] = `
   justify-content: space-between;
   padding: 2.4rem 0;
   position: relative;
+  z-index: 20;
 }
 
 .c2 {
