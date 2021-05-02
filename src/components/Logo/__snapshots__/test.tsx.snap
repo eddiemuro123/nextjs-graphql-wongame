@@ -79,15 +79,15 @@ exports[`<Logo /> should render a white label by default 1`] = `
         y2="49.1031"
       >
         <stop
-          stop-color="#FF5F5F"
+          stop-color="#47C8FF"
         />
         <stop
           offset="1"
-          stop-color="#F062C0"
+          stop-color="#2B96D8"
         />
         <stop
           offset="1"
-          stop-color="#F23131"
+          stop-color="#47C8FF"
         />
       </lineargradient>
     </defs>

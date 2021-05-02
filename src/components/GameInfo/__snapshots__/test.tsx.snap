@@ -2,7 +2,7 @@
 
 exports[`<GameInfo /> should render game informations 1`] = `
 .c6 {
-  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  background: #47c8ff;
   color: #FAFAFA;
   border: none;
   border-radius: 0.4rem;
@@ -23,13 +23,15 @@ exports[`<GameInfo /> should render game informations 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   height: 5rem;
   font-size: 1.6rem;
   padding: 0.8rem 4.8rem;
 }
 
 .c6:hover {
-  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+  background: #2499ae;
 }
 
 .c6 svg {
@@ -41,7 +43,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
 }
 
 .c8 {
-  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  background: #47c8ff;
   color: #FAFAFA;
   border: none;
   border-radius: 0.4rem;
@@ -62,11 +64,13 @@ exports[`<GameInfo /> should render game informations 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   height: 5rem;
   font-size: 1.6rem;
   padding: 0.8rem 4.8rem;
   background: none;
-  color: #F231A5;
+  color: #2499ae;
 }
 
 .c8:hover {
@@ -82,7 +86,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
 }
 
 .c8:hover {
-  color: #e20e8d;
+  color: #1b7484;
 }
 
 .c1 {
@@ -97,7 +101,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
   position: absolute;
   left: 0;
   width: 5rem;
-  border-bottom: 0.5rem solid #F231A5;
+  border-bottom: 0.5rem solid #2499ae;
   bottom: -1rem;
 }
 
@@ -114,7 +118,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
   align-items: center;
   font-weight: 600;
   color: #FAFAFA;
-  background-color: #3CD3C1;
+  background-color: #47C8FF;
   font-size: 1.4rem;
   height: 3.6rem;
   padding: 0 2.4rem;
@@ -133,8 +137,8 @@ exports[`<GameInfo /> should render game informations 1`] = `
 }
 
 .c3::before {
-  border-left-color: #1f8a7d;
-  border-top-color: #1f8a7d;
+  border-left-color: #009de0;
+  border-top-color: #009de0;
 }
 
 .c3::before {
@@ -269,7 +273,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
         />
       </svg>
       <span>
-        Add to cart
+        Adicionar ao carrinho
       </span>
     </button>
     <button
@@ -292,7 +296,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
         />
       </svg>
       <span>
-        Wishlist
+        Lista de desejos
       </span>
     </button>
   </div>

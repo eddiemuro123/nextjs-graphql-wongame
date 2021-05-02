@@ -17,19 +17,23 @@ describe('<GameDetails />', () => {
     renderWithTheme(<GameDetails {...props} />)
 
     expect(
-      screen.getByRole('heading', { name: /Developer/i })
+      screen.getByRole('heading', { name: /Desenvolvedora/i })
     ).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { name: /Release Date/i })
+      screen.getByRole('heading', { name: /Data de lançamento/i })
     ).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { name: /Platforms/i })
+      screen.getByRole('heading', { name: /Plataformas/i })
     ).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { name: /Publisher/i })
+      screen.getByRole('heading', { name: /Editora/i })
     ).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /Rating/i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /Genres/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /Classificação/i })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /Gêneros/i })
+    ).toBeInTheDocument()
   })
 
   it('should render platform icons', () => {
@@ -43,7 +47,7 @@ describe('<GameDetails />', () => {
   it('should render the formated date', () => {
     renderWithTheme(<GameDetails {...props} />)
 
-    expect(screen.getByText('Nov 21, 2020')).toBeInTheDocument()
+    expect(screen.getByText('21 de nov. de 2020')).toBeInTheDocument()
   })
 
   it('should render free rating when BR0', () => {

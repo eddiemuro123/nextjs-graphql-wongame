@@ -7,9 +7,9 @@ describe('<Menu />', () => {
   it('should render the menu', () => {
     const { container } = renderWithTheme(<Menu />)
 
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
-    expect(screen.getByLabelText(/search/i)).toBeInTheDocument()
-    expect(screen.getByLabelText(/shopping cart/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/abrir menu/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/pesquisar/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/Carrinho de compras/i)).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
   })
@@ -22,11 +22,11 @@ describe('<Menu />', () => {
     expect(fullMenuElement.getAttribute('aria-hidden')).toBe('true')
     expect(fullMenuElement).toHaveStyle({ opacity: 0 })
 
-    fireEvent.click(screen.getByLabelText(/open menu/i))
+    fireEvent.click(screen.getByLabelText(/abrir menu/i))
     expect(fullMenuElement.getAttribute('aria-hidden')).toBe('false')
     expect(fullMenuElement).toHaveStyle({ opacity: 1 })
 
-    fireEvent.click(screen.getByLabelText(/close menu/i))
+    fireEvent.click(screen.getByLabelText(/fechar menu/i))
     expect(fullMenuElement.getAttribute('aria-hidden')).toBe('true')
     expect(fullMenuElement).toHaveStyle({ opacity: 0 })
   })
@@ -34,16 +34,16 @@ describe('<Menu />', () => {
   it('should show register box when logged out', () => {
     renderWithTheme(<Menu />)
 
-    expect(screen.getAllByText(/Sign in/i)).toHaveLength(2)
-    expect(screen.getByText(/Sign up/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/entrar/i)).toHaveLength(2)
+    expect(screen.getByText(/Registrar-se/i)).toBeInTheDocument()
   })
 
   it('should show wishlist and account when logged in', () => {
     renderWithTheme(<Menu username="caio" />)
 
-    expect(screen.getByText(/My Account/i)).toBeInTheDocument()
-    expect(screen.getByText(/Wishlist/i)).toBeInTheDocument()
-    expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/Sign up/i)).not.toBeInTheDocument()
+    expect(screen.getByText(/Minha conta/i)).toBeInTheDocument()
+    expect(screen.getByText(/Lista de desejos/i)).toBeInTheDocument()
+    expect(screen.queryByText(/entrar/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/registrar-se/i)).not.toBeInTheDocument()
   })
 })

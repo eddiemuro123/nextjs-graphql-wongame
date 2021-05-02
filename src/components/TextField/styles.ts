@@ -35,12 +35,14 @@ export const InputWrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     background: ${theme.colors.lightGray};
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
     padding: 0 ${theme.spacings.xsmall};
-    border: 0.2rem solid;
+    border: 0.1rem solid;
     border-color: ${theme.colors.lightGray};
+    transition: all 0.3s ease;
+
     &:focus-within {
-      box-shadow: 0 0 0.5rem ${theme.colors.primary};
+      border: 0.1rem solid ${theme.colors.secondary};
     }
   `}
 `

@@ -18,19 +18,19 @@ const FormSignIn = () => (
       />
       <TextField
         name="password"
-        placeholder="Password"
+        placeholder="Senha"
         type="password"
         icon={<Lock />}
       />
-      <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>
+      <S.ForgotPassword href="#">Esqueceu sua senha?</S.ForgotPassword>
       <Button size="large" fullWidth>
-        Sign in now
+        Entrar agora!
       </Button>
 
       <FormLink>
-        Don’t have an account?{' '}
+        Ainda não possui uma conta?{' '}
         <Link href="/sign-up">
-          <a>Sign up</a>
+          <a>Cadastre-se</a>
         </Link>
       </FormLink>
     </form>

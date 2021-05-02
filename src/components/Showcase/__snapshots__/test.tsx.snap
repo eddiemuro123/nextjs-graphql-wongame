@@ -8,7 +8,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
 }
 
 .c10 {
-  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  background: #47c8ff;
   color: #FAFAFA;
   border: none;
   border-radius: 0.4rem;
@@ -29,17 +29,19 @@ exports[`<Showcase /> should render full showcase 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   height: 4rem;
   font-size: 1.4rem;
   padding: 0.8rem 3.2rem;
 }
 
 .c10:hover {
-  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+  background: #2499ae;
 }
 
 .c25 {
-  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  background: #47c8ff;
   color: #FAFAFA;
   border: none;
   border-radius: 0.4rem;
@@ -60,12 +62,14 @@ exports[`<Showcase /> should render full showcase 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   height: 3rem;
   font-size: 1.2rem;
 }
 
 .c25:hover {
-  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+  background: #2499ae;
 }
 
 .c25 svg {
@@ -141,7 +145,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
 }
 
 .c20 {
-  color: #F231A5;
+  color: #2499ae;
   position: absolute;
   right: 0;
   top: -0.5rem;
@@ -166,6 +170,14 @@ exports[`<Showcase /> should render full showcase 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   margin-top: 0.8rem;
+}
+
+.c22 button {
+  background-color: #2499ae;
+}
+
+.c22 button:hover {
+  opacity: 0.9;
 }
 
 .c23 {
@@ -198,7 +210,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
   align-items: center;
   color: #FAFAFA;
   padding: 0 0.8rem;
-  background-color: #3CD3C1;
+  background-color: #47C8FF;
   border-radius: 0.4rem;
   margin-right: calc(0.8rem / 2);
 }
@@ -362,7 +374,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
 .c3 {
   color: #FAFAFA;
   padding-left: 0.8rem;
-  border-left: 0.7rem solid #3CD3C1;
+  border-left: 0.7rem solid #47C8FF;
   font-size: 2.0rem;
 }
 
@@ -583,7 +595,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        aria-label="Add to Wishlist"
+                        aria-label="Adicionar a lista de desejos"
                         class="c21"
                         fill="currentColor"
                         focusable="false"

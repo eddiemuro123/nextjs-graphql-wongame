@@ -13,7 +13,7 @@ const Footer = () => {
       <S.Content>
         <S.Column>
           <Heading color="black" size="small" lineBottom lineColor="secondary">
-            Contact Us
+            Contate-nos
           </Heading>
 
           <a href="mailto:sac@wongames.com">sac@wongames.com</a>
@@ -21,7 +21,7 @@ const Footer = () => {
 
         <S.Column>
           <Heading color="black" lineColor="secondary" lineBottom size="small">
-            Follow us
+            Siga-nos
           </Heading>
 
           <nav aria-labelledby="social media">
@@ -63,10 +63,10 @@ const Footer = () => {
 
           <nav aria-labelledby="footer resources">
             <Link href="/">
-              <a>Home</a>
+              <a>Início</a>
             </Link>
             <Link href="/games">
-              <a>Store</a>
+              <a>Loja</a>
             </Link>
             <Link href="/search">
               <a>Buscar</a>
@@ -76,7 +76,7 @@ const Footer = () => {
 
         <S.Column aria-labelledby="footer-contact">
           <Heading color="black" lineColor="secondary" lineBottom size="small">
-            Location
+            Localização
           </Heading>
           <span>Lorem ipsum dolor sit.</span>
           <span>Lorem Ipsum</span>
@@ -85,7 +85,7 @@ const Footer = () => {
       </S.Content>
 
       <S.Copyright>
-        Won Games {getCurrentYear} © All rights reserved.
+        Won Games {getCurrentYear} © Todos os direitos reservados.
       </S.Copyright>
     </S.Wrapper>
   )
