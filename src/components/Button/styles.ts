@@ -58,6 +58,7 @@ export const Wrapper = styled.button<WrapperProps>`
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    font-family: ${theme.font.family};
 
     &:hover {
       background: ${minimal ? 'none' : '#2499ae'};
