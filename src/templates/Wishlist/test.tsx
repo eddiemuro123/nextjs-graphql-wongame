@@ -8,6 +8,7 @@ import gamesMock from 'components/GameCardSlider/mock'
 import highLightMock from 'components/Highlight/mock'
 
 const props = {
+  games: gamesMock,
   recommendedHighLight: highLightMock,
   recommendedGames: gamesMock
 }
@@ -27,5 +28,6 @@ describe('<Wishlist />', () => {
       screen.getByRole('heading', { name: /lista de desejos/i })
     ).toBeInTheDocument()
     expect(screen.getByTestId('Mock Showcase')).toBeInTheDocument()
+    expect(screen.getAllByText('Population Zero')).toHaveLength(6)
   })
 })
