@@ -8,7 +8,7 @@ const priceModifiers = {
   default: (theme: DefaultTheme) => css`
     color: ${theme.colors.white};
     padding: 0 ${theme.spacings.xxsmall};
-    background-color: ${theme.colors.secondary};
+    background-color: ${theme.colors.tertiary};
     border-radius: ${theme.border.radius};
     margin-right: calc(${theme.spacings.xxsmall} / 2);
   `,
@@ -111,15 +111,6 @@ export const BuyBox = styled.div`
     align-items: center;
     justify-content: flex-end;
     margin-top: ${theme.spacings.xxsmall};
-
-    button {
-      background-color: #f062c0;
-
-      &:hover {
-        background-color: #f062c0;
-        opacity: 0.9;
-      }
-    }
   `}
 `
 

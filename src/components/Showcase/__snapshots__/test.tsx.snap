@@ -174,15 +174,6 @@ exports[`<Showcase /> should render full showcase 1`] = `
   margin-top: 0.8rem;
 }
 
-.c22 button {
-  background-color: #f062c0;
-}
-
-.c22 button:hover {
-  background-color: #f062c0;
-  opacity: 0.9;
-}
-
 .c23 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -213,7 +204,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
   align-items: center;
   color: #FAFAFA;
   padding: 0 0.8rem;
-  background-color: #47C8FF;
+  background-color: #f062c0;
   border-radius: 0.4rem;
   margin-right: calc(0.8rem / 2);
 }
