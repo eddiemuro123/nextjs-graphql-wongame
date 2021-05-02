@@ -8,7 +8,7 @@ exports[`<GameCard /> should render correctly 1`] = `
 }
 
 .c10 {
-  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  background: #47c8ff;
   color: #FAFAFA;
   border: none;
   border-radius: 0.4rem;
@@ -29,12 +29,14 @@ exports[`<GameCard /> should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   height: 3rem;
   font-size: 1.2rem;
 }
 
 .c10:hover {
-  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+  background: #2499ae;
 }
 
 .c10 svg {
@@ -110,7 +112,7 @@ exports[`<GameCard /> should render correctly 1`] = `
 }
 
 .c6 {
-  color: #F231A5;
+  color: #2499ae;
   position: absolute;
   right: 0;
   top: -0.5rem;
@@ -137,6 +139,14 @@ exports[`<GameCard /> should render correctly 1`] = `
   margin-top: 0.8rem;
 }
 
+.c8 button {
+  background-color: #2499ae;
+}
+
+.c8 button:hover {
+  opacity: 0.9;
+}
+
 .c9 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -150,7 +160,7 @@ exports[`<GameCard /> should render correctly 1`] = `
   align-items: center;
   color: #FAFAFA;
   padding: 0 0.8rem;
-  background-color: #3CD3C1;
+  background-color: #47C8FF;
   border-radius: 0.4rem;
   margin-right: calc(0.8rem / 2);
 }
@@ -189,7 +199,7 @@ exports[`<GameCard /> should render correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        aria-label="Add to Wishlist"
+        aria-label="Adicionar a lista de desejos"
         class="c7"
         fill="currentColor"
         focusable="false"

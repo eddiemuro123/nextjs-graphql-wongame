@@ -81,9 +81,9 @@ const Logo = ({
           y2="49.1031"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF5F5F" />
-          <stop offset="1" stopColor="#F062C0" />
-          <stop offset="1" stopColor="#F23131" />
+          <stop stopColor="#47C8FF" />
+          <stop offset="1" stopColor="#2B96D8" />
+          <stop offset="1" stopColor="#47C8FF" />
         </linearGradient>
       </defs>
     </svg>

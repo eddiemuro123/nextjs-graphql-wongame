@@ -13,14 +13,16 @@ exports[`<FormSignUp /> should render the form 1`] = `
   display: -ms-flexbox;
   display: flex;
   background: #EAEAEA;
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   padding: 0 1.6rem;
-  border: 0.2rem solid;
+  border: 0.1rem solid;
   border-color: #EAEAEA;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .c2:focus-within {
-  box-shadow: 0 0 0.5rem #F231A5;
+  border: 0.1rem solid #47C8FF;
 }
 
 .c5 {
@@ -52,7 +54,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
 }
 
 .c7 {
-  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  background: #47c8ff;
   color: #FAFAFA;
   border: none;
   border-radius: 0.4rem;
@@ -73,6 +75,8 @@ exports[`<FormSignUp /> should render the form 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   height: 5rem;
   font-size: 1.6rem;
   padding: 0.8rem 4.8rem;
@@ -80,7 +84,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
 }
 
 .c7:hover {
-  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+  background: #2499ae;
 }
 
 .c0 .c1 {
@@ -98,17 +102,17 @@ exports[`<FormSignUp /> should render the form 1`] = `
 }
 
 .c8 a {
-  color: #3CD3C1;
+  color: #47C8FF;
   -webkit-text-decoration: none;
   text-decoration: none;
-  border-bottom: 0.1rem solid #3CD3C1;
+  border-bottom: 0.1rem solid #47C8FF;
   -webkit-transition: color,border,0.1s ease-in-out;
   transition: color,border,0.1s ease-in-out;
 }
 
 .c8 a:hover {
-  color: #29b3a3;
-  border-bottom: 0.1rem solid #29b3a3;
+  color: #14b9ff;
+  border-bottom: 0.1rem solid #14b9ff;
 }
 
 <div
@@ -144,7 +148,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
         <input
           class="c5"
           name="name"
-          placeholder="Name"
+          placeholder="Nome"
           type="name"
           value=""
         />
@@ -221,7 +225,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
         <input
           class="c5"
           name="password"
-          placeholder="Password"
+          placeholder="Senha"
           type="password"
           value=""
         />
@@ -263,7 +267,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
         <input
           class="c5"
           name="confirm-password"
-          placeholder="Confirm password"
+          placeholder="Confirmar senha"
           type="password"
           value=""
         />
@@ -273,18 +277,18 @@ exports[`<FormSignUp /> should render the form 1`] = `
       class="c6 c7"
     >
       <span>
-        Sign up now
+        Cadastrar agora!
       </span>
     </button>
     <div
       class="c8"
     >
-      Already have an account?
+      Já possui uma conta?
        
       <a
         href="/sign-in"
       >
-        Sign in
+        Entre agora
       </a>
     </div>
   </form>

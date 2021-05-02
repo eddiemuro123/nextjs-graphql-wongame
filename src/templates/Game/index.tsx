@@ -44,7 +44,7 @@ const Game = ({
       </S.SectionGallery>
 
       <S.SectionDescription>
-        <TextContent title="Description" content={description} />
+        <TextContent title="Descrição" content={description} />
       </S.SectionDescription>
 
       <S.SectionGameDetails>
@@ -52,12 +52,12 @@ const Game = ({
       </S.SectionGameDetails>
 
       <Showcase
-        title="Upcoming"
+        title="Chegando em breve"
         games={upcomingGames}
         highlight={upcomingHighLight}
       />
 
-      <Showcase title="You may like these games" games={recommendedGames} />
+      <Showcase title="Talvez você se interesse" games={recommendedGames} />
     </S.Main>
   </Base>
 )

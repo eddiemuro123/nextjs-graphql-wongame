@@ -111,6 +111,14 @@ export const BuyBox = styled.div`
     align-items: center;
     justify-content: flex-end;
     margin-top: ${theme.spacings.xxsmall};
+
+    button {
+      background-color: ${theme.colors.primary};
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
   `}
 `
 

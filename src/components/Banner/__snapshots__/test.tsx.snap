@@ -2,7 +2,7 @@
 
 exports[`<Banner /> should render correctly 1`] = `
 .c5 {
-  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  background: #47c8ff;
   color: #FAFAFA;
   border: none;
   border-radius: 0.4rem;
@@ -23,13 +23,15 @@ exports[`<Banner /> should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   height: 5rem;
   font-size: 1.6rem;
   padding: 0.8rem 4.8rem;
 }
 
 .c5:hover {
-  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+  background: #2499ae;
 }
 
 .c0 {
@@ -65,7 +67,7 @@ exports[`<Banner /> should render correctly 1`] = `
 }
 
 .c4 strong {
-  color: #F231A5;
+  color: #2499ae;
   font-weight: 600;
 }
 

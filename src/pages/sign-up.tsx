@@ -3,7 +3,7 @@ import Auth from '../templates/Auth'
 
 const SignUp = () => {
   return (
-    <Auth title="Sign Up">
+    <Auth title="Cadastre-se">
       <FormSignUp />
     </Auth>
   )

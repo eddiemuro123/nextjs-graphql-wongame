@@ -26,11 +26,11 @@ describe('<GameInfo />', () => {
     renderWithTheme(<GameInfo {...props} />)
 
     expect(
-      screen.getByRole('button', { name: /add to cart/i })
+      screen.getByRole('button', { name: /Adicionar ao carrinho/i })
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('button', { name: /wishlist/i })
+      screen.getByRole('button', { name: /Lista de desejos/i })
     ).toBeInTheDocument()
   })
 })

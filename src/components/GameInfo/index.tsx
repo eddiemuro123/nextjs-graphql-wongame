@@ -27,10 +27,10 @@ const GameInfo = ({ title, description, price }: GameInfoProps) => (
 
     <S.ButtonsWrapper>
       <Button icon={<AddShoppingCart />} size="large">
-        Add to cart
+        Adicionar ao carrinho
       </Button>
       <Button icon={<FavoriteBorder />} size="large" minimal>
-        Wishlist
+        Lista de desejos
       </Button>
     </S.ButtonsWrapper>
   </S.Wrapper>

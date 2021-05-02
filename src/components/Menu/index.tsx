@@ -22,45 +22,53 @@ const Menu = ({ username }: MenuProps) => {
     <S.Wrapper>
       <MediaMatch lessThan="medium">
         <S.IconWrapper onClick={() => setIsOpen(true)}>
-          <MenuIcon aria-label="Open Menu" />
+          <MenuIcon aria-label="Abrir Menu" />
         </S.IconWrapper>
       </MediaMatch>
       <S.LogoWrapper>
-        <Logo hideOnMobile />
+        <Link href="/" passHref>
+          <a>
+            <Logo hideOnMobile />
+          </a>
+        </Link>
       </S.LogoWrapper>
 
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
-          <S.MenuLink href="#">Home</S.MenuLink>
-          <S.MenuLink href="#">Explore</S.MenuLink>
+          <Link href="/" passHref>
+            <S.MenuLink>Início</S.MenuLink>
+          </Link>
+          <S.MenuLink href="#">Biblioteca</S.MenuLink>
         </S.MenuNav>
       </MediaMatch>
       <S.MenuGroup>
         <S.IconWrapper>
-          <SearchIcon aria-label="Search" />
+          <SearchIcon aria-label="Pesquisar" />
         </S.IconWrapper>
         <S.IconWrapper>
-          <ShoppingCartIcon aria-label="Open Shopping Cart" />
+          <ShoppingCartIcon aria-label="Carrinho de compras" />
         </S.IconWrapper>
         {!username && (
           <MediaMatch greaterThan="medium">
             <Link href="/sign-in" passHref>
-              <Button as="a">Sign In</Button>
+              <Button as="a">Entrar</Button>
             </Link>
           </MediaMatch>
         )}
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
-        <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
+        <CloseIcon aria-label="Fechar Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
-          <S.MenuLink href="#">Home</S.MenuLink>
-          <S.MenuLink href="#">Explore</S.MenuLink>
+          <Link href="/" passHref>
+            <S.MenuLink>Início</S.MenuLink>
+          </Link>
+          <S.MenuLink href="#">Biblioteca</S.MenuLink>
 
           {!!username && (
             <>
-              <S.MenuLink href="#">My Account</S.MenuLink>
-              <S.MenuLink href="#">Wishlist</S.MenuLink>
+              <S.MenuLink href="#">Minha Conta</S.MenuLink>
+              <S.MenuLink href="#">Lista de desejos</S.MenuLink>
             </>
           )}
         </S.MenuNav>
@@ -69,13 +77,13 @@ const Menu = ({ username }: MenuProps) => {
           <S.RegisterBox>
             <Link href="/sign-in" passHref>
               <Button fullWidth size="large" as="a">
-                Sign in
+                Entrar
               </Button>
             </Link>
-            <span>or</span>
+            <span>ou</span>
 
             <Link href="/sign-up" passHref>
-              <S.CreateAccount title="Sign Up">Sign Up</S.CreateAccount>
+              <S.CreateAccount title="Sign Up">Registrar-se</S.CreateAccount>
             </Link>
           </S.RegisterBox>
         )}

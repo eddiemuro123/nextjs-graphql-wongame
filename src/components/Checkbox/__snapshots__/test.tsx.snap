@@ -57,12 +57,12 @@ exports[`<Checkbox /> should render with label 1`] = `
 }
 
 .c1:focus {
-  border: 0.2rem solid #F231A5;
+  border: 0.2rem solid #2499ae;
 }
 
 .c1:checked {
-  border-color: #F231A5;
-  background: #F231A5;
+  border-color: #2499ae;
+  background: #2499ae;
 }
 
 .c1:checked:before {

@@ -30,7 +30,9 @@ describe('<GameCard />', () => {
       props.img
     )
 
-    expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
+    expect(
+      screen.getByLabelText(/Adicionar a lista de desejos/i)
+    ).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
   })
@@ -60,7 +62,9 @@ describe('<GameCard />', () => {
   it('should render a filled Favorite icon when favorite is true', () => {
     renderWithTheme(<GameCard {...props} favorite />)
 
-    expect(screen.getByLabelText(/remove from wishlist/i)).toBeInTheDocument()
+    expect(
+      screen.getByLabelText(/Remover da lista de desejos/i)
+    ).toBeInTheDocument()
   })
 
   it('should call onFav method when favorite is clicked', () => {
@@ -83,7 +87,7 @@ describe('<GameCard />', () => {
     )
     const ribbon = screen.getByText(/my ribbon/i)
 
-    expect(ribbon).toHaveStyle({ backgroundColor: '#3CD3C1' })
+    expect(ribbon).toHaveStyle({ backgroundColor: '#47C8FF' })
     expect(ribbon).toHaveStyle({ height: '2.6rem', fontSize: '1.2rem' })
     expect(ribbon).toBeInTheDocument()
   })

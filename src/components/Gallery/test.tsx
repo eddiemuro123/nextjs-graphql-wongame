@@ -51,7 +51,7 @@ describe('<Gallery />', () => {
     fireEvent.click(
       screen.getByRole('button', { name: /Thumb - Gallery Image 1/i })
     )
-    fireEvent.click(screen.getByRole('button', { name: /close modal/i }))
+    fireEvent.click(screen.getByRole('button', { name: /fechar modal/i }))
     expect(modal.getAttribute('aria-hidden')).toBe('true')
     expect(modal).toHaveStyle({ opacity: 0 })
   })
