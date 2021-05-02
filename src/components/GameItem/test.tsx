@@ -26,4 +26,13 @@ describe('<GameItem />', () => {
       'https://source.unsplash.com/user/willianjusten/151x70'
     )
   })
+
+  it('should render the item with download link', () => {
+    const downloadLink = 'https://link'
+    renderWithTheme(<GameItem {...props} downloadLink={downloadLink} />)
+
+    expect(
+      screen.getByRole('link', { name: `Baixe ${props.title} aqui` })
+    ).toHaveAttribute('href', downloadLink)
+  })
 })
