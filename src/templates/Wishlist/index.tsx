@@ -1,6 +1,7 @@
-import { Container } from 'components/Container'
 import GameCard, { GameCardProps } from 'components/GameCard'
+import { Container } from 'components/Container'
 import { HighLightProps } from 'components/Highlight'
+import { Divider } from 'components/Divider'
 import { Grid } from 'components/Grid'
 import Heading from 'components/Heading'
 import Showcase from 'components/Showcase'
@@ -28,6 +29,8 @@ const Wishlist = ({
           <GameCard {...game} key={`wishlist-${index}`} />
         ))}
       </Grid>
+
+      <Divider />
     </Container>
 
     <Showcase
