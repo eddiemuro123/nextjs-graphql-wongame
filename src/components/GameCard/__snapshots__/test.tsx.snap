@@ -140,15 +140,6 @@ exports[`<GameCard /> should render correctly 1`] = `
   margin-top: 0.8rem;
 }
 
-.c8 button {
-  background-color: #f062c0;
-}
-
-.c8 button:hover {
-  background-color: #f062c0;
-  opacity: 0.9;
-}
-
 .c9 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -162,7 +153,7 @@ exports[`<GameCard /> should render correctly 1`] = `
   align-items: center;
   color: #FAFAFA;
   padding: 0 0.8rem;
-  background-color: #47C8FF;
+  background-color: #f062c0;
   border-radius: 0.4rem;
   margin-right: calc(0.8rem / 2);
 }

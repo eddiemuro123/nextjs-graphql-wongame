@@ -44,7 +44,7 @@ describe('<GameCard />', () => {
 
     expect(price).not.toHaveStyle({ textDecoration: 'line-through' })
 
-    expect(price).toHaveStyle({ backgroundColor: theme.colors.secondary })
+    expect(price).toHaveStyle({ backgroundColor: theme.colors.tertiary })
   })
 
   it('should render a line-through in price when promotional', () => {

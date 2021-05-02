@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
 
     ${RibbonStyles.Wrapper} {
       right: -1rem;
+      background-color: ${theme.colors.tertiary};
 
       &:before {
         border-right-width: 1rem;
