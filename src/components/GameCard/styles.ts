@@ -113,9 +113,10 @@ export const BuyBox = styled.div`
     margin-top: ${theme.spacings.xxsmall};
 
     button {
-      background-color: ${theme.colors.primary};
+      background-color: #f062c0;
 
       &:hover {
+        background-color: #f062c0;
         opacity: 0.9;
       }
     }

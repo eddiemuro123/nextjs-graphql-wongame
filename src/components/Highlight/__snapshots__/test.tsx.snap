@@ -25,6 +25,7 @@ exports[`<Highlight /> should render headings and buttons 1`] = `
   justify-content: center;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
   height: 4rem;
   font-size: 1.4rem;
   padding: 0.8rem 3.2rem;
