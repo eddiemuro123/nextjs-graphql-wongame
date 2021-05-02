@@ -33,6 +33,12 @@ const WrapperModifiers = {
       color: ${darken(0.1, theme.colors.primary)};
     }
   `,
+  disabled: () => css`
+    &:disabled {
+      cursor: not-allowed;
+      filter: saturate(30%);
+    }
+  `,
   withIcon: (theme: DefaultTheme) => css`
     svg {
       width: 1.5rem;
@@ -45,7 +51,7 @@ const WrapperModifiers = {
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, fullWidth, hasIcon, minimal }) => css`
+  ${({ theme, size, fullWidth, hasIcon, minimal, disabled }) => css`
     background: #47c8ff;
     color: ${theme.colors.white};
     border: none;
@@ -64,6 +70,7 @@ export const Wrapper = styled.button<WrapperProps>`
       background: ${minimal ? 'none' : '#2499ae'};
     }
 
+    ${disabled && WrapperModifiers.disabled()}
     ${!!size && WrapperModifiers[size](theme)}
     ${!!fullWidth && WrapperModifiers.fullWidth()}
     ${!!hasIcon && WrapperModifiers.withIcon(theme)}
