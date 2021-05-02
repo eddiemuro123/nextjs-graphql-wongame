@@ -6,8 +6,6 @@ import { HighLightProps } from 'components/Highlight'
 import Showcase from 'components/Showcase'
 import Base from 'templates/Base'
 
-import * as S from './styles'
-
 export type WishlistTemplateProps = {
   recommendedGames: GameCardProps[]
   recommendedHighLight: HighLightProps
@@ -20,7 +18,7 @@ const Wishlist = ({
   <Base>
     <Container>
       <Heading lineLeft lineColor="secondary">
-        Lista de dejesos
+        Lista de desejos
       </Heading>
     </Container>
 
