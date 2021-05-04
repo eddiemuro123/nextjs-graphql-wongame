@@ -8,7 +8,7 @@ import TextField from '.'
 
 describe('<TextField />', () => {
   it('Renders with Label', () => {
-    renderWithTheme(<TextField label="Field" name="Field" />)
+    renderWithTheme(<TextField label="Field" name="field" />)
 
     expect(screen.getByLabelText('Field')).toBeInTheDocument()
   })
@@ -47,7 +47,7 @@ describe('<TextField />', () => {
 
   it('Is accessible by tab', () => {
     renderWithTheme(
-      <TextField label="Field" name="Field" />
+      <TextField label="Field" name="field" />
     )
 
     const input = screen.getByLabelText('Field')
@@ -76,7 +76,7 @@ describe('<TextField />', () => {
     renderWithTheme(
       <TextField
         onInput={onInput}
-        name="Field"
+        name="field"
         label="Field"
         disabled
       />
@@ -97,7 +97,7 @@ describe('<TextField />', () => {
   it('Is not accessible by tab when disabled', () => {
     renderWithTheme(
       <TextField
-        name="Field"
+        name="field"
         label="Field"
         disabled
       />
@@ -114,7 +114,7 @@ describe('<TextField />', () => {
     const { container } = renderWithTheme(
       <TextField
         icon={<Email data-testid="icon" />}
-        name="Field"
+        name="field"
         label="Field"
         error="Error message"
       />
