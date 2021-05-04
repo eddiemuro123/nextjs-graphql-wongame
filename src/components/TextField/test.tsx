@@ -8,9 +8,9 @@ import TextField from '.'
 
 describe('<TextField />', () => {
   it('Renders with Label', () => {
-    renderWithTheme(<TextField label="Label" labelFor="Field" id="Field" />)
+    renderWithTheme(<TextField label="Field" name="Field" />)
 
-    expect(screen.getByLabelText('Label')).toBeInTheDocument()
+    expect(screen.getByLabelText('Field')).toBeInTheDocument()
   })
 
   it('Renders without Label', () => {
@@ -30,9 +30,7 @@ describe('<TextField />', () => {
     renderWithTheme(
       <TextField
         onInput={onInput}
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        label="Field"
       />
     )
 
@@ -49,10 +47,10 @@ describe('<TextField />', () => {
 
   it('Is accessible by tab', () => {
     renderWithTheme(
-      <TextField label="TextField" labelFor="TextField" id="TextField" />
+      <TextField label="Field" name="Field" />
     )
 
-    const input = screen.getByLabelText('TextField')
+    const input = screen.getByLabelText('Field')
     expect(document.body).toHaveFocus()
 
     userEvent.tab()
@@ -78,9 +76,8 @@ describe('<TextField />', () => {
     renderWithTheme(
       <TextField
         onInput={onInput}
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="Field"
+        label="Field"
         disabled
       />
     )
@@ -100,14 +97,13 @@ describe('<TextField />', () => {
   it('Is not accessible by tab when disabled', () => {
     renderWithTheme(
       <TextField
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="Field"
+        label="Field"
         disabled
       />
     )
 
-    const input = screen.getByLabelText('TextField')
+    const input = screen.getByLabelText('Field')
     expect(document.body).toHaveFocus()
 
     userEvent.tab()
@@ -118,8 +114,8 @@ describe('<TextField />', () => {
     const { container } = renderWithTheme(
       <TextField
         icon={<Email data-testid="icon" />}
-        label="TextField"
-        labelFor="TextField"
+        name="Field"
+        label="Field"
         error="Error message"
       />
     )
