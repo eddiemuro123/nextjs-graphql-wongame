@@ -1,5 +1,20 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
 import media from 'styled-media-query'
+
+export type LinkProps = {
+  isActive?: boolean
+}
+
+const linkModifiers = {
+  default: (theme: DefaultTheme) => css`
+    background: ${theme.colors.white};
+    color: ${theme.colors.black};
+  `,
+  active: (theme: DefaultTheme) => css`
+    background: ${theme.colors.secondary};
+    color: ${theme.colors.white};
+  `
+}
 
 export const Nav = styled.nav`
   ${({ theme }) => css`
@@ -15,10 +30,8 @@ export const Nav = styled.nav`
   `}
 `
 
-export const Link = styled.a`
-  ${({ theme }) => css`
-    background: ${theme.colors.white};
-    color: ${theme.colors.black};
+export const Link = styled.a<LinkProps>`
+  ${({ theme, isActive }) => css`
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -33,6 +46,9 @@ export const Link = styled.a`
     > span {
       margin-left: ${theme.spacings.xsmall};
     }
+
+    ${isActive && linkModifiers.active(theme)};
+    ${!isActive && linkModifiers.default(theme)};
 
     ${media.lessThan('medium')`
       justify-content: center;
