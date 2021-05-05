@@ -73,11 +73,11 @@ exports[`<Banner /> should render correctly 1`] = `
 }
 
 @media (max-width:1170px) {
-  .c0 .sc-bdvvaa {
+  .c0 .sc-bdfBwQ {
     right: 0;
   }
 
-  .c0 .sc-bdvvaa::before {
+  .c0 .sc-bdfBwQ::before {
     display: none;
   }
 }
