@@ -7,7 +7,7 @@ import {
 } from '@styled-icons/material-outlined'
 
 export type ProfileMenuProps = {
-  activeLink?: '/profile/me' | '/profile/cards' | '/profile/orders' 
+  activeLink?: '/profile/me' | '/profile/cards' | '/profile/orders'
 }
 
 import * as S from './styles'
@@ -30,7 +30,10 @@ const ProfileMenu = ({ activeLink }: ProfileMenuProps) => {
       </Link>
 
       <Link href="/profile/orders" passHref>
-        <S.Link isActive={activeLink === '/profile/orders'} title="Minhas compras">
+        <S.Link
+          isActive={activeLink === '/profile/orders'}
+          title="Minhas compras"
+        >
           <FormatListBulleted size={24} />
           <span>Minhas compras</span>
         </S.Link>
