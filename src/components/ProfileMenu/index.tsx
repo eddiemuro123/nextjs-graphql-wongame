@@ -7,7 +7,7 @@ import {
 } from '@styled-icons/material-outlined'
 
 export type ProfileMenuProps = {
-  activeLink?: '/profile/me' | '/profile/cards' | '/profile/orders'
+  activeLink?: '/profile/me' | '/profile/cards' | '/profile/orders' | string
 }
 
 import * as S from './styles'
