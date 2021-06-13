@@ -38,7 +38,7 @@ const Cart = ({
           <S.Content>
             <CartList items={items} total={total} />
 
-            <PaymentOptions cards={cards} handlePayment={handlePayments} />
+            <PaymentOptions cards={cards!} handlePayment={handlePayments} />
           </S.Content>
         ) : (
           <Empty
