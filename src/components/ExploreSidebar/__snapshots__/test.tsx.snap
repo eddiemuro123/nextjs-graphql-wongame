@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ExploreSidebar /> should render the heading 1`] = `
+<main
+  class=""
+>
+  <h1>
+    ExploreSidebar
+  </h1>
+</main>
+`;
