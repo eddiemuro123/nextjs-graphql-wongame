@@ -87,6 +87,10 @@ exports[`<CartList /> should render the cart list 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c8 {
@@ -190,7 +194,9 @@ exports[`<CartList /> should render the cart list 1`] = `
   <div
     class="c7"
   >
-    Total 
+    <span>
+      Total:
+    </span>
     <span
       class="c8"
     >
