@@ -70,7 +70,7 @@ describe('<Game />', () => {
   })
 
   it('should not render the gallery if no images', () => {
-    renderWithTheme(<Game {...props} gallery={undefined} />)
+    renderWithTheme(<Game {...props} gallery={undefined!} />)
 
     expect(screen.queryByTestId('Mock Gallery')).not.toBeInTheDocument()
   })

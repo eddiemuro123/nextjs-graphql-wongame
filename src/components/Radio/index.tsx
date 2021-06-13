@@ -27,9 +27,10 @@ const Radio = ({
     <S.Wrapper>
       <S.Input
         id={labelFor}
-        type="checkbox"
+        type="radio"
         onChange={handleChange}
         value={value}
+        role="radio"
         {...props}
       />
       {!!label && (
