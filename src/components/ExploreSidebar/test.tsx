@@ -35,4 +35,18 @@ describe('<ExploreSidebar />', () => {
 
     expect(screen.getByRole('button', { name: /Filtrar/i })).toBeInTheDocument()
   })
+
+  it('should check initial values that are passed', () => {
+    renderWithTheme(
+      <ExploreSidebar
+        items={items}
+        initialValues={{ windows: true, filtrar_por: 'menor-para-maior' }}
+      />
+    )
+
+    expect(screen.getByRole('checkbox', { name: /windows/i })).toBeChecked()
+    expect(
+      screen.getByRole('radio', { name: /Menor para maior/i })
+    ).toBeChecked()
+  })
 })
