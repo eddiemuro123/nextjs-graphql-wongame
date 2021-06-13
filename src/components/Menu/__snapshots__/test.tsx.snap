@@ -7,7 +7,7 @@ exports[`<Menu /> should render the menu 1`] = `
   overflow: hidden;
 }
 
-.c12 {
+.c28 {
   background: #47c8ff;
   color: #FAFAFA;
   border: none;
@@ -37,11 +37,11 @@ exports[`<Menu /> should render the menu 1`] = `
   padding: 0.8rem 3.2rem;
 }
 
-.c12:hover {
+.c28:hover {
   background: #2499ae;
 }
 
-.c16 {
+.c32 {
   background: #47c8ff;
   color: #FAFAFA;
   border: none;
@@ -72,7 +72,7 @@ exports[`<Menu /> should render the menu 1`] = `
   width: 100%;
 }
 
-.c16:hover {
+.c32:hover {
   background: #2499ae;
 }
 
@@ -158,7 +158,7 @@ exports[`<Menu /> should render the menu 1`] = `
   animation: hoverAnimation 0.2s forwards;
 }
 
-.c13 {
+.c29 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -177,7 +177,7 @@ exports[`<Menu /> should render the menu 1`] = `
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
@@ -185,7 +185,7 @@ exports[`<Menu /> should render the menu 1`] = `
   pointer-events: none;
 }
 
-.c13 > svg {
+.c29 > svg {
   position: absolute;
   top: 0;
   right: 0;
@@ -195,7 +195,7 @@ exports[`<Menu /> should render the menu 1`] = `
   height: 2.4rem;
 }
 
-.c13 .c7 {
+.c29 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -216,7 +216,7 @@ exports[`<Menu /> should render the menu 1`] = `
   flex-direction: column;
 }
 
-.c13 .c9 {
+.c29 .c9 {
   color: #030517;
   font-weight: 600;
   font-size: 2.0rem;
@@ -229,7 +229,7 @@ exports[`<Menu /> should render the menu 1`] = `
   transition: transform 0.3s ease-in-out;
 }
 
-.c13 .c14 {
+.c29 .c30 {
   -webkit-transform: translateY(3rem);
   -ms-transform: translateY(3rem);
   transform: translateY(3rem);
@@ -238,7 +238,7 @@ exports[`<Menu /> should render the menu 1`] = `
   transition: transform 0.3s ease-in-out;
 }
 
-.c15 {
+.c31 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -253,17 +253,148 @@ exports[`<Menu /> should render the menu 1`] = `
   padding: 0 4.8rem 4.8rem;
 }
 
-.c15 > span {
+.c31 > span {
   display: block;
   margin: 0.8rem 0;
   font-size: 1.2rem;
 }
 
-.c17 {
+.c33 {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #2499ae;
   border-bottom: 0.2rem solid #2499ae;
+}
+
+.c13 {
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.c13 .c16 {
+  -webkit-transition: -webkit-transform 0.2s ease-in,opacity 0.3s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in,opacity 0.3s ease-in-out;
+  transition: transform 0.2s ease-in,opacity 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-2rem);
+  -ms-transform: translateY(-2rem);
+  transform: translateY(-2rem);
+}
+
+.c14 {
+  cursor: pointer;
+  color: #FAFAFA;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 2.4rem;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: #FAFAFA;
+  color: #030517;
+  margin-top: 2.4rem;
+  position: absolute;
+  right: 0;
+}
+
+.c17::before {
+  content: '';
+  position: absolute;
+  border-right: 1.2rem solid transparent;
+  border-left: 1.2rem solid transparent;
+  border-bottom: 1.2rem solid #FAFAFA;
+  top: -1.2rem;
+  right: 2.4rem;
+}
+
+.c15 {
+  color: #FAFAFA;
+  width: 2.4rem;
+  height: 2.4rem;
+  position: relative;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.c23 {
+  max-width: 100%;
+}
+
+.c25 {
+  color: #47C8FF;
+  font-size: 2.8rem;
+}
+
+.c27 {
+  color: #FAFAFA;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 3.2rem;
+}
+
+.c19 {
+  background: #FAFAFA;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: start;
+  -ms-flex-item-align: start;
+  align-self: start;
+}
+
+.c19 .c20 {
+  padding-bottom: 3.2rem;
+}
+
+.c19 .c22 {
+  max-width: 20rem;
+}
+
+.c19 .c24 {
+  font-size: 1.8rem;
+}
+
+.c19 .c26 {
+  color: #030517;
+  font-size: 1.6rem;
+}
+
+.c12 .c18 {
+  width: 56rem;
 }
 
 @media (max-width:768px) {
@@ -446,7 +577,7 @@ exports[`<Menu /> should render the menu 1`] = `
       </a>
       <a
         class="c9 c10"
-        href="#"
+        href="/games"
       >
         Biblioteca
       </a>
@@ -479,29 +610,115 @@ exports[`<Menu /> should render the menu 1`] = `
     <div
       class="c2"
     >
-      <svg
-        aria-hidden="true"
-        aria-label="Carrinho de compras"
-        class="c3"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="c6"
       >
-        <path
-          d="M0 0h24v24H0V0z"
-          fill="none"
-        />
-        <path
-          d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0020.01 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
+        <main
+          class="c12"
+        >
+          <div
+            class="c13"
+          >
+            <div
+              class="c14"
+            >
+              <div
+                class="c15"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Carrinho de compras"
+                  class="c3"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h24v24H0V0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0020.01 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              aria-hidden="true"
+              class="c16 c17"
+            >
+              <div
+                class="c18 c19"
+              >
+                <main
+                  class="c20 c21"
+                >
+                  <img
+                    alt="Um gamer jogando vídeo-game num sofá"
+                    class="c22 c23"
+                    role="img"
+                    src="/img/empty.svg"
+                  />
+                  <h2
+                    class="c24 c25"
+                  >
+                    Seu carrinho está vazio
+                  </h2>
+                  <p
+                    class="c26 c27"
+                  >
+                    Visite nossa biblioteca e explores incríveis jogos e ofertas
+                  </p>
+                  <a
+                    class="c28"
+                    href="/"
+                  >
+                    <span>
+                      Voltar para a loja
+                    </span>
+                  </a>
+                </main>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <div
+        class="c1"
+      >
+        <a
+          href="/cart"
+        >
+          <div
+            class="c15"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Carrinho de compras"
+              class="c3"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0020.01 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
     </div>
     <div
       class="c6"
     >
       <a
-        class="c12"
+        class="c28"
         href="/sign-in"
       >
         <span>
@@ -512,7 +729,7 @@ exports[`<Menu /> should render the menu 1`] = `
   </div>
   <nav
     aria-hidden="true"
-    class="c13"
+    class="c29"
   >
     <svg
       aria-hidden="true"
@@ -542,16 +759,16 @@ exports[`<Menu /> should render the menu 1`] = `
       </a>
       <a
         class="c9 c10"
-        href="#"
+        href="/games"
       >
         Biblioteca
       </a>
     </div>
     <div
-      class="c14 c15"
+      class="c30 c31"
     >
       <a
-        class="c16"
+        class="c32"
         href="/sign-in"
       >
         <span>
@@ -562,7 +779,7 @@ exports[`<Menu /> should render the menu 1`] = `
         ou
       </span>
       <a
-        class="c17"
+        class="c33"
         href="/sign-up"
         title="Sign Up"
       >

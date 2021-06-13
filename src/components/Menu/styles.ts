@@ -100,7 +100,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     transition: opacity 0.3s ease-in-out;
     opacity: ${isOpen ? 1 : 0};

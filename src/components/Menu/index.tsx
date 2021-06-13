@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2'
-import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outlined/ShoppingCart'
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 
@@ -10,6 +9,9 @@ import Button from '../Button/index'
 import Logo from '../Logo/index'
 import MediaMatch from '../MediaMatch/index'
 import * as S from './styles'
+import CartDropdown from 'components/CartDropdown'
+import UserDropdown from 'components/UserDropdown'
+import CartIcon from 'components/CartIcon'
 
 export type MenuProps = {
   username?: string
@@ -38,7 +40,9 @@ const Menu = ({ username }: MenuProps) => {
           <Link href="/" passHref>
             <S.MenuLink>Início</S.MenuLink>
           </Link>
-          <S.MenuLink href="#">Biblioteca</S.MenuLink>
+          <Link href="/games" passHref>
+            <S.MenuLink>Biblioteca</S.MenuLink>
+          </Link>
         </S.MenuNav>
       </MediaMatch>
       <S.MenuGroup>
@@ -46,15 +50,26 @@ const Menu = ({ username }: MenuProps) => {
           <SearchIcon aria-label="Pesquisar" />
         </S.IconWrapper>
         <S.IconWrapper>
-          <ShoppingCartIcon aria-label="Carrinho de compras" />
-        </S.IconWrapper>
-        {!username && (
           <MediaMatch greaterThan="medium">
+            <CartDropdown />
+          </MediaMatch>
+          <MediaMatch lessThan="medium">
+            <Link href="/cart">
+              <a>
+                <CartIcon />
+              </a>
+            </Link>
+          </MediaMatch>
+        </S.IconWrapper>
+        <MediaMatch greaterThan="medium">
+          {!username ? (
             <Link href="/sign-in" passHref>
               <Button as="a">Entrar</Button>
             </Link>
-          </MediaMatch>
-        )}
+          ) : (
+            <UserDropdown username={username} />
+          )}
+        </MediaMatch>
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
@@ -63,12 +78,18 @@ const Menu = ({ username }: MenuProps) => {
           <Link href="/" passHref>
             <S.MenuLink>Início</S.MenuLink>
           </Link>
-          <S.MenuLink href="#">Biblioteca</S.MenuLink>
+          <Link href="/games" passHref>
+            <S.MenuLink>Biblioteca</S.MenuLink>
+          </Link>
 
           {!!username && (
             <>
-              <S.MenuLink href="#">Minha Conta</S.MenuLink>
-              <S.MenuLink href="#">Lista de desejos</S.MenuLink>
+              <Link href="/profile/me" passHref>
+                <S.MenuLink>Minha Conta</S.MenuLink>
+              </Link>
+              <Link href="/wishlist" passHref>
+                <S.MenuLink>Lista de desejos</S.MenuLink>
+              </Link>
             </>
           )}
         </S.MenuNav>
