@@ -34,15 +34,15 @@ const Cart = ({
           Meu carrinho
         </Heading>
 
-        {items.length ? (
+        {items?.length ? (
           <S.Content>
-            <CartList items={items} total={total} />
+            <CartList items={items} total={total!} />
 
             <PaymentOptions cards={cards!} handlePayment={handlePayments} />
           </S.Content>
         ) : (
           <Empty
-            title="Seu carrinho está vázio"
+            title="Seu carrinho está vazio"
             description="Visite nossa biblioteca e explores incríveis jogos e ofertas"
             hasLink
           />
