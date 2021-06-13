@@ -9,7 +9,7 @@ describe('<Menu />', () => {
 
     expect(screen.getByLabelText(/abrir menu/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/pesquisar/i)).toBeInTheDocument()
-    expect(screen.getByLabelText(/Carrinho de compras/i)).toBeInTheDocument()
+    expect(screen.getAllByLabelText(/Carrinho de compras/i)).toHaveLength(2)
 
     expect(container.firstChild).toMatchSnapshot()
   })
@@ -42,7 +42,7 @@ describe('<Menu />', () => {
     renderWithTheme(<Menu username="caio" />)
 
     expect(screen.getByText(/Minha conta/i)).toBeInTheDocument()
-    expect(screen.getByText(/Lista de desejos/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Lista de desejos/i)).toHaveLength(2)
     expect(screen.queryByText(/entrar/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/registrar-se/i)).not.toBeInTheDocument()
   })
