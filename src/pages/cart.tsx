@@ -10,7 +10,7 @@ const CartPage = (props: CartProps) => {
 
 export default CartPage
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   return {
     props: {
       games: gamesMock,
