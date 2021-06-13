@@ -72,7 +72,8 @@ exports[`<Radio /> should render with label (white) 1`] = `
   <input
     class="c1"
     id="check"
-    type="checkbox"
+    role="radio"
+    type="radio"
     value="anyValue"
   />
   <label
