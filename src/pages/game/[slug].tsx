@@ -12,7 +12,6 @@ import {
   QueryGameBySlugVariables
 } from 'graphql/generated/QueryGameBySlug'
 
-import { formatPrice } from 'utils/formatters/price'
 import { initializeApollo } from 'utils/apollo'
 
 const apolloClient = initializeApollo()
