@@ -15,7 +15,8 @@
     "generate": "yarn plop --plopfile generators/plopfile.js",
     "types:generate": "yarn schema:download && yarn schema:convert && yarn codegen",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook -s ./public"
+    "build-storybook": "build-storybook -s ./public",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "husky": {
     "hooks": {
