@@ -1,6 +1,8 @@
 import filterItemsMock from 'components/ExploreSidebar/mock'
 import { QUERY_GAMES } from 'graphql/queries/games'
+
 import GamesTemplate, { GamesTemplateProps } from 'templates/Games'
+
 import { initializeApollo } from 'utils/apollo'
 
 const GamesPage = (props: GamesTemplateProps) => {
@@ -11,8 +13,10 @@ export default GamesPage
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
-
-  const { data } = await apolloClient.query({ query: QUERY_GAMES })
+  const { data } = await apolloClient.query({
+    query: QUERY_GAMES,
+    variables: { limit: 9 }
+  })
 
   return {
     props: {
