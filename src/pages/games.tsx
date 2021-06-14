@@ -1,6 +1,9 @@
 import filterItemsMock from 'components/ExploreSidebar/mock'
-import gamesItemsMock from 'components/GameCardSlider/mock'
+import { QUERY_GAMES } from 'graphql/queries/games'
+
 import GamesTemplate, { GamesTemplateProps } from 'templates/Games'
+
+import { initializeApollo } from 'utils/apollo'
 
 const GamesPage = (props: GamesTemplateProps) => {
   return <GamesTemplate {...props} />
@@ -8,10 +11,25 @@ const GamesPage = (props: GamesTemplateProps) => {
 
 export default GamesPage
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  const apolloClient = initializeApollo()
+  const { data } = await apolloClient.query({
+    query: QUERY_GAMES,
+    variables: { limit: 9 }
+  })
+
   return {
     props: {
-      games: gamesItemsMock,
+      revalidate: 60,
+      games: data.games.map((game) => ({
+        title: game.name,
+        developer: game.developers[0].name,
+        img: game?.cover?.url ?? {},
+        price: new Intl.NumberFormat('pt-br', {
+          style: 'currency',
+          currency: 'BRL'
+        }).format(game.price)
+      })),
       filterItems: filterItemsMock
     }
   }

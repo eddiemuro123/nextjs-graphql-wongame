@@ -8,7 +8,7 @@ export default function Page404() {
       <Container>
         <Empty
           title="Ooppss..."
-          description="Esta página ainda não existe. Visite nossa biblioteca e explores incríveis jogos e ofertas."
+          description="A página que você procura ainda não existe."
           hasLink
         />
       </Container>
