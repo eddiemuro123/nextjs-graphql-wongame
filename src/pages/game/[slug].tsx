@@ -1,16 +1,19 @@
 import { useRouter } from 'next/router'
+import { GetStaticProps } from 'next'
 
 import Game, { GameTemplateProps } from 'templates/Game'
 import gamesMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
-import { initializeApollo } from 'utils/apollo'
+
 import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
 import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from 'graphql/queries/games'
 import {
   QueryGameBySlug,
   QueryGameBySlugVariables
 } from 'graphql/generated/QueryGameBySlug'
-import { GetStaticProps } from 'next'
+
+import { formatPrice } from 'utils/formatters/price'
+import { initializeApollo } from 'utils/apollo'
 
 const apolloClient = initializeApollo()
 
@@ -60,7 +63,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         price: game.price,
         description: game.short_description
       },
-      gallery: game.gallery,
+      gallery: game.gallery.map((image) => ({
+        src: image.src,
+        label: image.label
+      })),
       description: game.description,
       details: {
         developer: game.developers[0].name,

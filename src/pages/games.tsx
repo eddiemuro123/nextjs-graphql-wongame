@@ -5,6 +5,7 @@ import { QUERY_GAMES } from 'graphql/queries/games'
 import filterItemsMock from 'components/ExploreSidebar/mock'
 
 import GamesTemplate, { GamesTemplateProps } from 'templates/Games'
+import { formatPrice } from 'utils/formatters/price'
 
 const GamesPage = (props: GamesTemplateProps) => {
   return <GamesTemplate {...props} />
@@ -28,10 +29,7 @@ export async function getStaticProps() {
         developer: game.developers[0].name,
         img: game?.cover?.url ?? 'img/img_game_fallback.png',
         slug: game.slug,
-        price: new Intl.NumberFormat('pt-br', {
-          style: 'currency',
-          currency: 'BRL'
-        }).format(game.price)
+        price: formatPrice(game.price)
       })),
       filterItems: filterItemsMock
     }

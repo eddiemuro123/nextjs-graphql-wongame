@@ -562,7 +562,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
                 >
                   <a
                     class="c15"
-                    href="/game/undefined"
+                    href="/game/population-zero"
                   >
                     <img
                       alt="Population Zero"
@@ -574,7 +574,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
                   >
                     <a
                       class="c17"
-                      href="/game/undefined"
+                      href="/game/population-zero"
                     >
                       <h3
                         class="c18"
