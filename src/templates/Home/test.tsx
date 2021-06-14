@@ -16,7 +16,11 @@ const props = {
   upcommingGames: gamesMock,
   upcommingHighlight: highlightMock,
   freeGames: gamesMock,
-  freeHighlight: highlightMock
+  freeHighlight: highlightMock,
+  newGamesTitle: 'New Games',
+  mostPopularGamesTitle: 'Most Popular',
+  upcomingGamesTitle: 'Upcoming',
+  freeGamesTitle: 'Free to play'
 }
 
 jest.mock('components/Showcase', () => {

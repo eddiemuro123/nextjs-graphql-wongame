@@ -1,7 +1,5 @@
 import Home, { HomeTemplateProps } from 'templates/Home'
 
-import hightLightMock from 'components/Highlight/mock'
-
 import { initializeApollo } from 'utils/apollo'
 
 import { QUERY_HOME } from 'graphql/queries/home'
@@ -41,7 +39,15 @@ export async function getStaticProps() {
         price: game.price
       })),
       newGamesTitle: sections?.newGames?.title,
-      mostPopularHighlight: hightLightMock,
+      mostPopularHighlight: {
+        title: sections?.popularGames?.highlight?.title,
+        subtitle: sections?.popularGames?.highlight?.subtitle,
+        backgroundImage: sections?.popularGames?.highlight?.background?.url,
+        buttonLabel: sections?.popularGames?.highlight?.buttonLabel,
+        buttonLink: sections?.popularGames?.highlight?.buttonLink,
+        floatImage: sections?.popularGames?.highlight?.floatImage?.url,
+        alignment: sections?.popularGames?.highlight?.alignment
+      },
       mostPopularGames: sections!.popularGames!.games.map((game) => ({
         title: game.name,
         slug: game.slug,
@@ -57,7 +63,15 @@ export async function getStaticProps() {
         img: game.cover?.url,
         price: game.price
       })),
-      upcommingHighligth: hightLightMock,
+      upcommingHighlight: {
+        title: sections?.upcomingGames?.highlight?.title,
+        subtitle: sections?.upcomingGames?.highlight?.subtitle,
+        backgroundImage: sections?.upcomingGames?.highlight?.background?.url,
+        buttonLabel: sections?.upcomingGames?.highlight?.buttonLabel,
+        buttonLink: sections?.upcomingGames?.highlight?.buttonLink,
+        floatImage: sections?.upcomingGames?.highlight?.floatImage?.url ?? '',
+        alignment: sections?.upcomingGames?.highlight?.alignment
+      },
       upcomingGamesTitle: sections?.upcomingGames?.title,
       freeGames: freeGames.map((game) => ({
         title: game.name,
@@ -66,7 +80,15 @@ export async function getStaticProps() {
         img: game.cover?.url,
         price: game.price
       })),
-      freeHighligth: hightLightMock,
+      freeHighlight: {
+        title: sections?.freeGames?.highlight?.title,
+        subtitle: sections?.freeGames?.highlight?.subtitle,
+        backgroundImage: sections?.freeGames?.highlight?.background?.url,
+        buttonLabel: sections?.freeGames?.highlight?.buttonLabel,
+        buttonLink: sections?.freeGames?.highlight?.buttonLink,
+        floatImage: sections?.freeGames?.highlight?.floatImage?.url,
+        alignment: sections?.freeGames?.highlight?.alignment
+      },
       freeGamesTitle: sections?.freeGames?.title
     }
   }
