@@ -1,9 +1,10 @@
-import filterItemsMock from 'components/ExploreSidebar/mock'
+import { initializeApollo } from 'utils/apollo'
+import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
 import { QUERY_GAMES } from 'graphql/queries/games'
 
-import GamesTemplate, { GamesTemplateProps } from 'templates/Games'
+import filterItemsMock from 'components/ExploreSidebar/mock'
 
-import { initializeApollo } from 'utils/apollo'
+import GamesTemplate, { GamesTemplateProps } from 'templates/Games'
 
 const GamesPage = (props: GamesTemplateProps) => {
   return <GamesTemplate {...props} />
@@ -13,7 +14,8 @@ export default GamesPage
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
-  const { data } = await apolloClient.query({
+
+  const { data } = await apolloClient.query<QueryGames, QueryGamesVariables>({
     query: QUERY_GAMES,
     variables: { limit: 9 }
   })
@@ -24,7 +26,7 @@ export async function getStaticProps() {
       games: data.games.map((game) => ({
         title: game.name,
         developer: game.developers[0].name,
-        img: game?.cover?.url ?? {},
+        img: game?.cover?.url ?? 'img/img_game_fallback.png',
         price: new Intl.NumberFormat('pt-br', {
           style: 'currency',
           currency: 'BRL'
