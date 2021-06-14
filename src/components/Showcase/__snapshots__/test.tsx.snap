@@ -131,6 +131,8 @@ exports[`<Showcase /> should render full showcase 1`] = `
 
 .c17 {
   max-width: calc(100% - 2.5rem);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c18 {
@@ -558,19 +560,21 @@ exports[`<Showcase /> should render full showcase 1`] = `
                 <article
                   class="c14"
                 >
-                  <div
+                  <a
                     class="c15"
+                    href="/game/undefined"
                   >
                     <img
                       alt="Population Zero"
                       src="https://source.unsplash.com/user/willianjusten/300x140"
                     />
-                  </div>
+                  </a>
                   <div
                     class="c16"
                   >
-                    <div
+                    <a
                       class="c17"
+                      href="/game/undefined"
                     >
                       <h3
                         class="c18"
@@ -582,7 +586,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
                       >
                         Rockstar Games
                       </h4>
-                    </div>
+                    </a>
                     <div
                       class="c20"
                       role="button"

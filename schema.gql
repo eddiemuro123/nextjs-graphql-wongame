@@ -1,0 +1,1244 @@
+"""Direct the client to resolve this field locally, either from the cache or local resolvers."""
+directive @client(
+  """
+  When true, the client will never use the cache for this value. See
+  https://www.apollographql.com/docs/react/essentials/local-state/#forcing-resolvers-with-clientalways-true
+  """
+  always: Boolean
+) on FIELD | FRAGMENT_DEFINITION | INLINE_FRAGMENT
+
+"""
+Export this locally resolved field as a variable to be used in the remainder of this query. See
+https://www.apollographql.com/docs/react/essentials/local-state/#using-client-fields-as-variables
+"""
+directive @export(
+  """The variable name to export this field as."""
+  as: String!
+) on FIELD
+
+"""
+Specify a custom store key for this result. See
+https://www.apollographql.com/docs/react/advanced/caching/#the-connection-directive
+"""
+directive @connection(
+  """Specify the store key."""
+  key: String!
+  """An array of query argument names to include in the generated custom store key."""
+  filter: [String!]
+) on FIELD
+
+input FileInfoInput {
+  name: String
+  alternativeText: String
+  caption: String
+}
+
+type UsersPermissionsMe {
+  id: ID!
+  username: String!
+  email: String!
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsMeRole
+}
+
+type UsersPermissionsMeRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+}
+
+input UsersPermissionsRegisterInput {
+  username: String!
+  email: String!
+  password: String!
+}
+
+input UsersPermissionsLoginInput {
+  identifier: String!
+  password: String!
+  provider: String = "local"
+}
+
+type UsersPermissionsLoginPayload {
+  jwt: String
+  user: UsersPermissionsMe!
+}
+
+type UserPermissionsPasswordPayload {
+  ok: Boolean!
+}
+
+type Category {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  slug: String!
+  published_at: DateTime
+  games(sort: String, limit: Int, start: Int, where: JSON): [Game!]!
+}
+
+type CategoryConnection {
+  values: [Category]
+  groupBy: CategoryGroupBy
+  aggregate: CategoryAggregator
+}
+
+type CategoryAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type CategoryGroupBy {
+  id: [CategoryConnectionId]
+  created_at: [CategoryConnectionCreated_at]
+  updated_at: [CategoryConnectionUpdated_at]
+  name: [CategoryConnectionName]
+  slug: [CategoryConnectionSlug]
+  published_at: [CategoryConnectionPublished_at]
+}
+
+type CategoryConnectionId {
+  key: ID
+  connection: CategoryConnection
+}
+
+type CategoryConnectionCreated_at {
+  key: DateTime
+  connection: CategoryConnection
+}
+
+type CategoryConnectionUpdated_at {
+  key: DateTime
+  connection: CategoryConnection
+}
+
+type CategoryConnectionName {
+  key: String
+  connection: CategoryConnection
+}
+
+type CategoryConnectionSlug {
+  key: String
+  connection: CategoryConnection
+}
+
+type CategoryConnectionPublished_at {
+  key: DateTime
+  connection: CategoryConnection
+}
+
+input CategoryInput {
+  name: String!
+  slug: String!
+  games: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editCategoryInput {
+  name: String
+  slug: String
+  games: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createCategoryInput {
+  data: CategoryInput
+}
+
+type createCategoryPayload {
+  category: Category
+}
+
+input updateCategoryInput {
+  where: InputID
+  data: editCategoryInput
+}
+
+type updateCategoryPayload {
+  category: Category
+}
+
+input deleteCategoryInput {
+  where: InputID
+}
+
+type deleteCategoryPayload {
+  category: Category
+}
+
+type Developer {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  slug: String!
+  published_at: DateTime
+  games(sort: String, limit: Int, start: Int, where: JSON): [Game!]!
+}
+
+type DeveloperConnection {
+  values: [Developer]
+  groupBy: DeveloperGroupBy
+  aggregate: DeveloperAggregator
+}
+
+type DeveloperAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type DeveloperGroupBy {
+  id: [DeveloperConnectionId]
+  created_at: [DeveloperConnectionCreated_at]
+  updated_at: [DeveloperConnectionUpdated_at]
+  name: [DeveloperConnectionName]
+  slug: [DeveloperConnectionSlug]
+  published_at: [DeveloperConnectionPublished_at]
+}
+
+type DeveloperConnectionId {
+  key: ID
+  connection: DeveloperConnection
+}
+
+type DeveloperConnectionCreated_at {
+  key: DateTime
+  connection: DeveloperConnection
+}
+
+type DeveloperConnectionUpdated_at {
+  key: DateTime
+  connection: DeveloperConnection
+}
+
+type DeveloperConnectionName {
+  key: String
+  connection: DeveloperConnection
+}
+
+type DeveloperConnectionSlug {
+  key: String
+  connection: DeveloperConnection
+}
+
+type DeveloperConnectionPublished_at {
+  key: DateTime
+  connection: DeveloperConnection
+}
+
+input DeveloperInput {
+  name: String!
+  slug: String!
+  games: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editDeveloperInput {
+  name: String
+  slug: String
+  games: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createDeveloperInput {
+  data: DeveloperInput
+}
+
+type createDeveloperPayload {
+  developer: Developer
+}
+
+input updateDeveloperInput {
+  where: InputID
+  data: editDeveloperInput
+}
+
+type updateDeveloperPayload {
+  developer: Developer
+}
+
+input deleteDeveloperInput {
+  where: InputID
+}
+
+type deleteDeveloperPayload {
+  developer: Developer
+}
+
+enum ENUM_GAME_RATING {
+  BR0
+  BR10
+  BR12
+  BR14
+  BR16
+  BR18
+}
+
+type Game {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  slug: String!
+  short_description: String!
+  description: String!
+  price: Float!
+  release_date: Date
+  rating: ENUM_GAME_RATING
+  cover: UploadFile
+  publisher: Publisher
+  published_at: DateTime
+  gallery(sort: String, limit: Int, start: Int, where: JSON): [UploadFile!]!
+  categories(sort: String, limit: Int, start: Int, where: JSON): [Category!]!
+  developers(sort: String, limit: Int, start: Int, where: JSON): [Developer!]!
+  platforms(sort: String, limit: Int, start: Int, where: JSON): [Platform!]!
+}
+
+type GameConnection {
+  values: [Game]
+  groupBy: GameGroupBy
+  aggregate: GameAggregator
+}
+
+type GameAggregator {
+  count: Int
+  totalCount: Int
+  sum: GameAggregatorSum
+  avg: GameAggregatorAvg
+  min: GameAggregatorMin
+  max: GameAggregatorMax
+}
+
+type GameAggregatorSum {
+  price: Float
+}
+
+type GameAggregatorAvg {
+  price: Float
+}
+
+type GameAggregatorMin {
+  price: Float
+}
+
+type GameAggregatorMax {
+  price: Float
+}
+
+type GameGroupBy {
+  id: [GameConnectionId]
+  created_at: [GameConnectionCreated_at]
+  updated_at: [GameConnectionUpdated_at]
+  name: [GameConnectionName]
+  slug: [GameConnectionSlug]
+  short_description: [GameConnectionShort_description]
+  description: [GameConnectionDescription]
+  price: [GameConnectionPrice]
+  release_date: [GameConnectionRelease_date]
+  rating: [GameConnectionRating]
+  cover: [GameConnectionCover]
+  publisher: [GameConnectionPublisher]
+  published_at: [GameConnectionPublished_at]
+}
+
+type GameConnectionId {
+  key: ID
+  connection: GameConnection
+}
+
+type GameConnectionCreated_at {
+  key: DateTime
+  connection: GameConnection
+}
+
+type GameConnectionUpdated_at {
+  key: DateTime
+  connection: GameConnection
+}
+
+type GameConnectionName {
+  key: String
+  connection: GameConnection
+}
+
+type GameConnectionSlug {
+  key: String
+  connection: GameConnection
+}
+
+type GameConnectionShort_description {
+  key: String
+  connection: GameConnection
+}
+
+type GameConnectionDescription {
+  key: String
+  connection: GameConnection
+}
+
+type GameConnectionPrice {
+  key: Float
+  connection: GameConnection
+}
+
+type GameConnectionRelease_date {
+  key: ID
+  connection: GameConnection
+}
+
+type GameConnectionRating {
+  key: String
+  connection: GameConnection
+}
+
+type GameConnectionCover {
+  key: ID
+  connection: GameConnection
+}
+
+type GameConnectionPublisher {
+  key: ID
+  connection: GameConnection
+}
+
+type GameConnectionPublished_at {
+  key: DateTime
+  connection: GameConnection
+}
+
+input GameInput {
+  name: String!
+  slug: String!
+  short_description: String!
+  description: String!
+  price: Float
+  release_date: Date
+  rating: ENUM_GAME_RATING
+  cover: ID
+  gallery: [ID]
+  categories: [ID]
+  developers: [ID]
+  platforms: [ID]
+  publisher: ID
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editGameInput {
+  name: String
+  slug: String
+  short_description: String
+  description: String
+  price: Float
+  release_date: Date
+  rating: ENUM_GAME_RATING
+  cover: ID
+  gallery: [ID]
+  categories: [ID]
+  developers: [ID]
+  platforms: [ID]
+  publisher: ID
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createGameInput {
+  data: GameInput
+}
+
+type createGamePayload {
+  game: Game
+}
+
+input updateGameInput {
+  where: InputID
+  data: editGameInput
+}
+
+type updateGamePayload {
+  game: Game
+}
+
+input deleteGameInput {
+  where: InputID
+}
+
+type deleteGamePayload {
+  game: Game
+}
+
+type Platform {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  slug: String!
+  published_at: DateTime
+  games(sort: String, limit: Int, start: Int, where: JSON): [Game!]!
+}
+
+type PlatformConnection {
+  values: [Platform]
+  groupBy: PlatformGroupBy
+  aggregate: PlatformAggregator
+}
+
+type PlatformAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type PlatformGroupBy {
+  id: [PlatformConnectionId]
+  created_at: [PlatformConnectionCreated_at]
+  updated_at: [PlatformConnectionUpdated_at]
+  name: [PlatformConnectionName]
+  slug: [PlatformConnectionSlug]
+  published_at: [PlatformConnectionPublished_at]
+}
+
+type PlatformConnectionId {
+  key: ID
+  connection: PlatformConnection
+}
+
+type PlatformConnectionCreated_at {
+  key: DateTime
+  connection: PlatformConnection
+}
+
+type PlatformConnectionUpdated_at {
+  key: DateTime
+  connection: PlatformConnection
+}
+
+type PlatformConnectionName {
+  key: String
+  connection: PlatformConnection
+}
+
+type PlatformConnectionSlug {
+  key: String
+  connection: PlatformConnection
+}
+
+type PlatformConnectionPublished_at {
+  key: DateTime
+  connection: PlatformConnection
+}
+
+input PlatformInput {
+  name: String!
+  slug: String!
+  games: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editPlatformInput {
+  name: String
+  slug: String
+  games: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createPlatformInput {
+  data: PlatformInput
+}
+
+type createPlatformPayload {
+  platform: Platform
+}
+
+input updatePlatformInput {
+  where: InputID
+  data: editPlatformInput
+}
+
+type updatePlatformPayload {
+  platform: Platform
+}
+
+input deletePlatformInput {
+  where: InputID
+}
+
+type deletePlatformPayload {
+  platform: Platform
+}
+
+type Publisher {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  slug: String!
+  published_at: DateTime
+  games(sort: String, limit: Int, start: Int, where: JSON): [Game!]!
+}
+
+type PublisherConnection {
+  values: [Publisher]
+  groupBy: PublisherGroupBy
+  aggregate: PublisherAggregator
+}
+
+type PublisherAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type PublisherGroupBy {
+  id: [PublisherConnectionId]
+  created_at: [PublisherConnectionCreated_at]
+  updated_at: [PublisherConnectionUpdated_at]
+  name: [PublisherConnectionName]
+  slug: [PublisherConnectionSlug]
+  published_at: [PublisherConnectionPublished_at]
+}
+
+type PublisherConnectionId {
+  key: ID
+  connection: PublisherConnection
+}
+
+type PublisherConnectionCreated_at {
+  key: DateTime
+  connection: PublisherConnection
+}
+
+type PublisherConnectionUpdated_at {
+  key: DateTime
+  connection: PublisherConnection
+}
+
+type PublisherConnectionName {
+  key: String
+  connection: PublisherConnection
+}
+
+type PublisherConnectionSlug {
+  key: String
+  connection: PublisherConnection
+}
+
+type PublisherConnectionPublished_at {
+  key: DateTime
+  connection: PublisherConnection
+}
+
+input PublisherInput {
+  name: String!
+  slug: String!
+  games: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editPublisherInput {
+  name: String
+  slug: String
+  games: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createPublisherInput {
+  data: PublisherInput
+}
+
+type createPublisherPayload {
+  publisher: Publisher
+}
+
+input updatePublisherInput {
+  where: InputID
+  data: editPublisherInput
+}
+
+type updatePublisherPayload {
+  publisher: Publisher
+}
+
+input deletePublisherInput {
+  where: InputID
+}
+
+type deletePublisherPayload {
+  publisher: Publisher
+}
+
+type UploadFile {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph!]!
+}
+
+type UploadFileConnection {
+  values: [UploadFile]
+  groupBy: UploadFileGroupBy
+  aggregate: UploadFileAggregator
+}
+
+type UploadFileAggregator {
+  count: Int
+  totalCount: Int
+  sum: UploadFileAggregatorSum
+  avg: UploadFileAggregatorAvg
+  min: UploadFileAggregatorMin
+  max: UploadFileAggregatorMax
+}
+
+type UploadFileAggregatorSum {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorAvg {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMin {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMax {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileGroupBy {
+  id: [UploadFileConnectionId]
+  created_at: [UploadFileConnectionCreated_at]
+  updated_at: [UploadFileConnectionUpdated_at]
+  name: [UploadFileConnectionName]
+  alternativeText: [UploadFileConnectionAlternativeText]
+  caption: [UploadFileConnectionCaption]
+  width: [UploadFileConnectionWidth]
+  height: [UploadFileConnectionHeight]
+  formats: [UploadFileConnectionFormats]
+  hash: [UploadFileConnectionHash]
+  ext: [UploadFileConnectionExt]
+  mime: [UploadFileConnectionMime]
+  size: [UploadFileConnectionSize]
+  url: [UploadFileConnectionUrl]
+  previewUrl: [UploadFileConnectionPreviewUrl]
+  provider: [UploadFileConnectionProvider]
+  provider_metadata: [UploadFileConnectionProvider_metadata]
+}
+
+type UploadFileConnectionId {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCreated_at {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUpdated_at {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionName {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionAlternativeText {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCaption {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionWidth {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHeight {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionFormats {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHash {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionExt {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionMime {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSize {
+  key: Float
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionPreviewUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider_metadata {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+input FileInput {
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input editFileInput {
+  name: String
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String
+  ext: String
+  mime: String
+  size: Float
+  url: String
+  previewUrl: String
+  provider: String
+  provider_metadata: JSON
+  related: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input deleteFileInput {
+  where: InputID
+}
+
+type deleteFilePayload {
+  file: UploadFile
+}
+
+type UsersPermissionsPermission {
+  id: ID!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission!]!
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser!]!
+}
+
+type UsersPermissionsRoleConnection {
+  values: [UsersPermissionsRole]
+  groupBy: UsersPermissionsRoleGroupBy
+  aggregate: UsersPermissionsRoleAggregator
+}
+
+type UsersPermissionsRoleAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsRoleGroupBy {
+  id: [UsersPermissionsRoleConnectionId]
+  name: [UsersPermissionsRoleConnectionName]
+  description: [UsersPermissionsRoleConnectionDescription]
+  type: [UsersPermissionsRoleConnectionType]
+}
+
+type UsersPermissionsRoleConnectionId {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionName {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionDescription {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionType {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input editRoleInput {
+  name: String
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateRoleInput {
+  where: InputID
+  data: editRoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsUser {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsUserConnection {
+  values: [UsersPermissionsUser]
+  groupBy: UsersPermissionsUserGroupBy
+  aggregate: UsersPermissionsUserAggregator
+}
+
+type UsersPermissionsUserAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsUserGroupBy {
+  id: [UsersPermissionsUserConnectionId]
+  created_at: [UsersPermissionsUserConnectionCreated_at]
+  updated_at: [UsersPermissionsUserConnectionUpdated_at]
+  username: [UsersPermissionsUserConnectionUsername]
+  email: [UsersPermissionsUserConnectionEmail]
+  provider: [UsersPermissionsUserConnectionProvider]
+  confirmed: [UsersPermissionsUserConnectionConfirmed]
+  blocked: [UsersPermissionsUserConnectionBlocked]
+  role: [UsersPermissionsUserConnectionRole]
+}
+
+type UsersPermissionsUserConnectionId {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionCreated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUpdated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUsername {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionEmail {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionProvider {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionBlocked {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionRole {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmationToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input editUserInput {
+  username: String
+  email: String
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmationToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+input updateUserInput {
+  where: InputID
+  data: editUserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_at | CategoryConnectionUpdated_at | CategoryConnectionName | CategoryConnectionSlug | CategoryConnectionPublished_at | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Developer | DeveloperConnection | DeveloperAggregator | DeveloperGroupBy | DeveloperConnectionId | DeveloperConnectionCreated_at | DeveloperConnectionUpdated_at | DeveloperConnectionName | DeveloperConnectionSlug | DeveloperConnectionPublished_at | createDeveloperPayload | updateDeveloperPayload | deleteDeveloperPayload | Game | GameConnection | GameAggregator | GameAggregatorSum | GameAggregatorAvg | GameAggregatorMin | GameAggregatorMax | GameGroupBy | GameConnectionId | GameConnectionCreated_at | GameConnectionUpdated_at | GameConnectionName | GameConnectionSlug | GameConnectionShort_description | GameConnectionDescription | GameConnectionPrice | GameConnectionRelease_date | GameConnectionRating | GameConnectionCover | GameConnectionPublisher | GameConnectionPublished_at | createGamePayload | updateGamePayload | deleteGamePayload | Platform | PlatformConnection | PlatformAggregator | PlatformGroupBy | PlatformConnectionId | PlatformConnectionCreated_at | PlatformConnectionUpdated_at | PlatformConnectionName | PlatformConnectionSlug | PlatformConnectionPublished_at | createPlatformPayload | updatePlatformPayload | deletePlatformPayload | Publisher | PublisherConnection | PublisherAggregator | PublisherGroupBy | PublisherConnectionId | PublisherConnectionCreated_at | PublisherConnectionUpdated_at | PublisherConnectionName | PublisherConnectionSlug | PublisherConnectionPublished_at | createPublisherPayload | updatePublisherPayload | deletePublisherPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload
+
+input InputID {
+  id: ID!
+}
+
+enum PublicationState {
+  LIVE
+  PREVIEW
+}
+
+type AdminUser {
+  id: ID!
+  username: String
+  firstname: String!
+  lastname: String!
+}
+
+type Query {
+  category(id: ID!, publicationState: PublicationState): Category
+  categories(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Category!]!
+  categoriesConnection(sort: String, limit: Int, start: Int, where: JSON): CategoryConnection
+  developer(id: ID!, publicationState: PublicationState): Developer
+  developers(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Developer!]!
+  developersConnection(sort: String, limit: Int, start: Int, where: JSON): DeveloperConnection
+  game(id: ID!, publicationState: PublicationState): Game
+  games(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Game!]!
+  gamesConnection(sort: String, limit: Int, start: Int, where: JSON): GameConnection
+  platform(id: ID!, publicationState: PublicationState): Platform
+  platforms(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Platform!]!
+  platformsConnection(sort: String, limit: Int, start: Int, where: JSON): PlatformConnection
+  publisher(id: ID!, publicationState: PublicationState): Publisher
+  publishers(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Publisher!]!
+  publishersConnection(sort: String, limit: Int, start: Int, where: JSON): PublisherConnection
+  files(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UploadFile!]!
+  filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
+  role(id: ID!, publicationState: PublicationState): UsersPermissionsRole
+  """Retrieve all the existing roles. You can't apply filters on this query."""
+  roles(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UsersPermissionsRole!]!
+  rolesConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsRoleConnection
+  user(id: ID!, publicationState: PublicationState): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UsersPermissionsUser!]!
+  usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
+  me: UsersPermissionsMe
+}
+
+type Mutation {
+  createCategory(input: createCategoryInput): createCategoryPayload
+  updateCategory(input: updateCategoryInput): updateCategoryPayload
+  deleteCategory(input: deleteCategoryInput): deleteCategoryPayload
+  createDeveloper(input: createDeveloperInput): createDeveloperPayload
+  updateDeveloper(input: updateDeveloperInput): updateDeveloperPayload
+  deleteDeveloper(input: deleteDeveloperInput): deleteDeveloperPayload
+  createGame(input: createGameInput): createGamePayload
+  updateGame(input: updateGameInput): updateGamePayload
+  deleteGame(input: deleteGameInput): deleteGamePayload
+  createPlatform(input: createPlatformInput): createPlatformPayload
+  updatePlatform(input: updatePlatformInput): updatePlatformPayload
+  deletePlatform(input: deletePlatformInput): deletePlatformPayload
+  createPublisher(input: createPublisherInput): createPublisherPayload
+  updatePublisher(input: updatePublisherInput): updatePublisherPayload
+  deletePublisher(input: deletePublisherInput): deletePublisherPayload
+  """Delete one file"""
+  deleteFile(input: deleteFileInput): deleteFilePayload
+  """Create a new role"""
+  createRole(input: createRoleInput): createRolePayload
+  """Update an existing role"""
+  updateRole(input: updateRoleInput): updateRolePayload
+  """Delete an existing role"""
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+  """Create a new user"""
+  createUser(input: createUserInput): createUserPayload
+  """Update an existing user"""
+  updateUser(input: updateUserInput): updateUserPayload
+  """Delete an existing user"""
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(refId: ID, ref: String, field: String, source: String, file: Upload!): UploadFile!
+  multipleUpload(refId: ID, ref: String, field: String, source: String, files: [Upload]!): [UploadFile]!
+  updateFileInfo(id: ID!, info: FileInfoInput!): UploadFile!
+  login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
+  register(input: UsersPermissionsRegisterInput!): UsersPermissionsLoginPayload!
+  forgotPassword(email: String!): UserPermissionsPasswordPayload
+  resetPassword(password: String!, passwordConfirmation: String!, code: String!): UsersPermissionsLoginPayload
+  emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
+}
+
+"""The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."""
+scalar JSON
+
+"""A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."""
+scalar DateTime
+
+"""A time string with format: HH:mm:ss.SSS"""
+scalar Time
+
+"""A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."""
+scalar Date
+
+"""The `Long` scalar type represents 52-bit integers"""
+scalar Long
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
