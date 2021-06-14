@@ -1362,7 +1362,7 @@ type ComponentPagePopularGames {
   id: ID!
   title: String!
   highlight: ComponentPageHighlight
-  games(sort: String, limit: Int, start: Int, where: JSON): [Banner!]!
+  games(sort: String, limit: Int, start: Int, where: JSON): [Game!]!
 }
 
 input ComponentPagePopularGameInput {

@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 export const HighlightFragment = gql`
-  fragment HightlightFragemnt on ComponentPageHighlight {
+  fragment HighlightFragment on ComponentPageHighlight {
     title
     subtitle
     background {
