@@ -1,6 +1,8 @@
 export function formatPrice(price: number | bigint): string {
-  return new Intl.NumberFormat('pt-br', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(price)
+  return price > 0
+    ? new Intl.NumberFormat('pt-br', {
+        style: 'currency',
+        currency: 'BRL'
+      }).format(price)
+    : 'Gratuito'
 }
