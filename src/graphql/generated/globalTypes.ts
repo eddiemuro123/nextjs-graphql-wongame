@@ -7,6 +7,11 @@
 // START Enums and Input Objects
 //==============================================================
 
+export enum ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT {
+  left = "left",
+  right = "right",
+}
+
 export enum ENUM_COMPONENTPAGERIBBON_COLOR {
   primary = "primary",
   secondary = "secondary",

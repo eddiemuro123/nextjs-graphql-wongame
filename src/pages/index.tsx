@@ -15,12 +15,14 @@ export default function Index(props: HomeTemplateProps) {
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
-  const { data } = await apolloClient.query<QueryHome>({ query: QUERY_HOME })
+  const {
+    data: { banners, newGames }
+  } = await apolloClient.query<QueryHome>({ query: QUERY_HOME })
 
   return {
     props: {
       revalidate: 60,
-      banners: data.banners.map((banner) => ({
+      banners: banners.map((banner) => ({
         img: banner.image?.url,
         title: banner.title,
         subtitle: banner.subtitle,
@@ -32,7 +34,13 @@ export async function getStaticProps() {
         }),
         buttonLabel: banner.button?.label
       })),
-      newGames: gamesMock,
+      newGames: newGames.map((game) => ({
+        title: game.name,
+        slug: game.slug,
+        developer: game.developers[0].name,
+        img: game.cover?.url,
+        price: game.price
+      })),
       mostPopularHighlight: hightLightMock,
       mostPopularGames: gamesMock,
       upcommingGames: gamesMock,

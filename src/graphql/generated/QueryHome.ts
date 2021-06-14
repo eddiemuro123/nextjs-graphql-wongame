@@ -36,6 +36,26 @@ export interface QueryHome_banners {
   ribbon: QueryHome_banners_ribbon | null;
 }
 
+export interface QueryHome_newGames_cover {
+  __typename: "UploadFile";
+  url: string;
+}
+
+export interface QueryHome_newGames_developers {
+  __typename: "Developer";
+  name: string;
+}
+
+export interface QueryHome_newGames {
+  __typename: "Game";
+  name: string;
+  slug: string;
+  cover: QueryHome_newGames_cover | null;
+  developers: QueryHome_newGames_developers[];
+  price: number;
+}
+
 export interface QueryHome {
   banners: QueryHome_banners[];
+  newGames: QueryHome_newGames[];
 }
