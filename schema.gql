@@ -607,6 +607,49 @@ type deleteGamePayload {
   game: Game
 }
 
+type Home {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  newGames: ComponentPageSection
+  upcomingGames: ComponentPageSection
+  freeGames: ComponentPageSection
+  popularGames: ComponentPagePopularGames
+  published_at: DateTime
+}
+
+input HomeInput {
+  newGames: ComponentPageSectionInput
+  upcomingGames: ComponentPageSectionInput
+  freeGames: ComponentPageSectionInput
+  popularGames: ComponentPagePopularGameInput
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editHomeInput {
+  newGames: editComponentPageSectionInput
+  upcomingGames: editComponentPageSectionInput
+  freeGames: editComponentPageSectionInput
+  popularGames: editComponentPagePopularGameInput
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input updateHomeInput {
+  data: editHomeInput
+}
+
+type updateHomePayload {
+  home: Home
+}
+
+type deleteHomePayload {
+  home: Home
+}
+
 type Platform {
   id: ID!
   created_at: DateTime!
@@ -1278,6 +1321,63 @@ input editComponentPageButtonInput {
   link: String
 }
 
+enum ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT {
+  right
+  left
+}
+
+type ComponentPageHighlight {
+  id: ID!
+  title: String!
+  subtitle: String!
+  background: UploadFile
+  floatImage: UploadFile
+  buttonLabel: String!
+  buttonLink: String!
+  alignment: ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT
+}
+
+input ComponentPageHighlightInput {
+  title: String!
+  subtitle: String!
+  background: ID
+  floatImage: ID
+  buttonLabel: String!
+  buttonLink: String!
+  alignment: ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT
+}
+
+input editComponentPageHighlightInput {
+  id: ID
+  title: String
+  subtitle: String
+  background: ID
+  floatImage: ID
+  buttonLabel: String
+  buttonLink: String
+  alignment: ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT
+}
+
+type ComponentPagePopularGames {
+  id: ID!
+  title: String!
+  highlight: ComponentPageHighlight
+  games(sort: String, limit: Int, start: Int, where: JSON): [Game!]!
+}
+
+input ComponentPagePopularGameInput {
+  title: String!
+  highlight: ComponentPageHighlightInput
+  games: [ID]
+}
+
+input editComponentPagePopularGameInput {
+  id: ID
+  title: String
+  highlight: editComponentPageHighlightInput
+  games: [ID]
+}
+
 enum ENUM_COMPONENTPAGERIBBON_COLOR {
   primary
   secondary
@@ -1308,7 +1408,24 @@ input editComponentPageRibbonInput {
   size: ENUM_COMPONENTPAGERIBBON_SIZE
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Banner | BannerConnection | BannerAggregator | BannerGroupBy | BannerConnectionId | BannerConnectionCreated_at | BannerConnectionUpdated_at | BannerConnectionImage | BannerConnectionTitle | BannerConnectionSubtitle | BannerConnectionButton | BannerConnectionRibbon | BannerConnectionPublished_at | createBannerPayload | updateBannerPayload | deleteBannerPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_at | CategoryConnectionUpdated_at | CategoryConnectionName | CategoryConnectionSlug | CategoryConnectionPublished_at | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Developer | DeveloperConnection | DeveloperAggregator | DeveloperGroupBy | DeveloperConnectionId | DeveloperConnectionCreated_at | DeveloperConnectionUpdated_at | DeveloperConnectionName | DeveloperConnectionSlug | DeveloperConnectionPublished_at | createDeveloperPayload | updateDeveloperPayload | deleteDeveloperPayload | Game | GameConnection | GameAggregator | GameAggregatorSum | GameAggregatorAvg | GameAggregatorMin | GameAggregatorMax | GameGroupBy | GameConnectionId | GameConnectionCreated_at | GameConnectionUpdated_at | GameConnectionName | GameConnectionSlug | GameConnectionShort_description | GameConnectionDescription | GameConnectionPrice | GameConnectionRelease_date | GameConnectionRating | GameConnectionCover | GameConnectionPublisher | GameConnectionPublished_at | createGamePayload | updateGamePayload | deleteGamePayload | Platform | PlatformConnection | PlatformAggregator | PlatformGroupBy | PlatformConnectionId | PlatformConnectionCreated_at | PlatformConnectionUpdated_at | PlatformConnectionName | PlatformConnectionSlug | PlatformConnectionPublished_at | createPlatformPayload | updatePlatformPayload | deletePlatformPayload | Publisher | PublisherConnection | PublisherAggregator | PublisherGroupBy | PublisherConnectionId | PublisherConnectionCreated_at | PublisherConnectionUpdated_at | PublisherConnectionName | PublisherConnectionSlug | PublisherConnectionPublished_at | createPublisherPayload | updatePublisherPayload | deletePublisherPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentPageButton | ComponentPageRibbon
+type ComponentPageSection {
+  id: ID!
+  title: String
+  highlight: ComponentPageHighlight
+}
+
+input ComponentPageSectionInput {
+  title: String
+  highlight: ComponentPageHighlightInput
+}
+
+input editComponentPageSectionInput {
+  id: ID
+  title: String
+  highlight: editComponentPageHighlightInput
+}
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Banner | BannerConnection | BannerAggregator | BannerGroupBy | BannerConnectionId | BannerConnectionCreated_at | BannerConnectionUpdated_at | BannerConnectionImage | BannerConnectionTitle | BannerConnectionSubtitle | BannerConnectionButton | BannerConnectionRibbon | BannerConnectionPublished_at | createBannerPayload | updateBannerPayload | deleteBannerPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_at | CategoryConnectionUpdated_at | CategoryConnectionName | CategoryConnectionSlug | CategoryConnectionPublished_at | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Developer | DeveloperConnection | DeveloperAggregator | DeveloperGroupBy | DeveloperConnectionId | DeveloperConnectionCreated_at | DeveloperConnectionUpdated_at | DeveloperConnectionName | DeveloperConnectionSlug | DeveloperConnectionPublished_at | createDeveloperPayload | updateDeveloperPayload | deleteDeveloperPayload | Game | GameConnection | GameAggregator | GameAggregatorSum | GameAggregatorAvg | GameAggregatorMin | GameAggregatorMax | GameGroupBy | GameConnectionId | GameConnectionCreated_at | GameConnectionUpdated_at | GameConnectionName | GameConnectionSlug | GameConnectionShort_description | GameConnectionDescription | GameConnectionPrice | GameConnectionRelease_date | GameConnectionRating | GameConnectionCover | GameConnectionPublisher | GameConnectionPublished_at | createGamePayload | updateGamePayload | deleteGamePayload | Home | updateHomePayload | deleteHomePayload | Platform | PlatformConnection | PlatformAggregator | PlatformGroupBy | PlatformConnectionId | PlatformConnectionCreated_at | PlatformConnectionUpdated_at | PlatformConnectionName | PlatformConnectionSlug | PlatformConnectionPublished_at | createPlatformPayload | updatePlatformPayload | deletePlatformPayload | Publisher | PublisherConnection | PublisherAggregator | PublisherGroupBy | PublisherConnectionId | PublisherConnectionCreated_at | PublisherConnectionUpdated_at | PublisherConnectionName | PublisherConnectionSlug | PublisherConnectionPublished_at | createPublisherPayload | updatePublisherPayload | deletePublisherPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentPageButton | ComponentPageHighlight | ComponentPagePopularGames | ComponentPageRibbon | ComponentPageSection
 
 input InputID {
   id: ID!
@@ -1339,6 +1456,7 @@ type Query {
   game(id: ID!, publicationState: PublicationState): Game
   games(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Game!]!
   gamesConnection(sort: String, limit: Int, start: Int, where: JSON): GameConnection
+  home(publicationState: PublicationState): Home
   platform(id: ID!, publicationState: PublicationState): Platform
   platforms(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Platform!]!
   platformsConnection(sort: String, limit: Int, start: Int, where: JSON): PlatformConnection
@@ -1370,6 +1488,8 @@ type Mutation {
   createGame(input: createGameInput): createGamePayload
   updateGame(input: updateGameInput): updateGamePayload
   deleteGame(input: deleteGameInput): deleteGamePayload
+  updateHome(input: updateHomeInput): updateHomePayload
+  deleteHome: deleteHomePayload
   createPlatform(input: createPlatformInput): createPlatformPayload
   updatePlatform(input: updatePlatformInput): updatePlatformPayload
   deletePlatform(input: deletePlatformInput): deletePlatformPayload
