@@ -26,7 +26,7 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
     <S.Wrapper>
       <S.Body>
         <Heading color="black" size="small" lineBottom>
-          Pagamento
+          Payment
         </Heading>
       </S.Body>
 
@@ -48,13 +48,13 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
         ))}
 
         <S.AddCard role="button">
-          <Add size={14} /> Adicionar um novo cartão
+          <Add size={14} /> Add a new credit card
         </S.AddCard>
       </S.CardsList>
 
       <S.Footer>
         <Button as="a" fullWidth minimal>
-          Voltar para a loja
+          Continue shopping
         </Button>
 
         <Button
@@ -63,7 +63,7 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
           onClick={handlePayment}
           disabled={!checked}
         >
-          Comprar agora
+          Buy now
         </Button>
       </S.Footer>
     </S.Wrapper>

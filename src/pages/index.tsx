@@ -15,7 +15,7 @@ export async function getStaticProps() {
   const CURRENT_DATE = new Date().toISOString().slice(0, 10)
 
   const {
-    data: { banners, newGames, upcomingGames, freeGames, sections }
+    data: { banners, newGames, freeGames, sections }
   } = await apolloClient.query<QueryHome, QueryHomeVariables>({
     query: QUERY_HOME,
     variables: { date: CURRENT_DATE }
@@ -30,7 +30,7 @@ export async function getStaticProps() {
       mostPopularHighlight: highlightMapper(sections?.popularGames?.highlight),
       mostPopularGames: gamesMapper(sections!.popularGames!.games),
       mostPopularGamesTitle: sections?.popularGames?.title,
-      upcommingGames: gamesMapper(upcomingGames),
+      upcommingGames: gamesMapper(sections?.upcomingGames?.games),
       upcommingHighlight: highlightMapper(sections?.upcomingGames?.highlight),
       upcomingGamesTitle: sections?.upcomingGames?.title,
       freeGames: gamesMapper(freeGames),

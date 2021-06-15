@@ -13,14 +13,14 @@ const Empty = ({ title, description, hasLink }: EmptyProps) => (
     <S.Image
       role="img"
       src="/img/empty.svg"
-      alt="Um gamer jogando vídeo-game num sofá"
+      alt="A gamer playing video games on the couch"
     />
 
     <S.Title>{title}</S.Title>
     <S.Description>{description}</S.Description>
     {hasLink && (
       <Link href="/" passHref>
-        <Button as="a">Voltar para a loja</Button>
+        <Button as="a">Back to the store</Button>
       </Link>
     )}
   </S.Wrapper>

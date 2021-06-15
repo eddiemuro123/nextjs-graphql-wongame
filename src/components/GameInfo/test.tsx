@@ -17,7 +17,7 @@ describe('<GameInfo />', () => {
       screen.getByRole('heading', { name: /My Game Title/i })
     ).toBeInTheDocument()
     expect(screen.getByText(/Game Description/i)).toBeInTheDocument()
-    expect(screen.getByText('R$ 210,00')).toBeInTheDocument()
+    expect(screen.getByText('$210.00')).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
   })
@@ -26,11 +26,11 @@ describe('<GameInfo />', () => {
     renderWithTheme(<GameInfo {...props} />)
 
     expect(
-      screen.getByRole('button', { name: /Adicionar ao carrinho/i })
+      screen.getByRole('button', { name: /Add to cart/i })
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('button', { name: /Lista de desejos/i })
+      screen.getByRole('button', { name: /Wishlist/i })
     ).toBeInTheDocument()
   })
 })

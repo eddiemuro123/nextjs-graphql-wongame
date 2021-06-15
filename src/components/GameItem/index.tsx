@@ -36,7 +36,7 @@ const GameItem = ({
             <S.DownloadLink
               href={downloadLink}
               target="_blank"
-              aria-label={`Baixe ${title} aqui`}
+              aria-label={`Download ${title} here`}
             >
               <Download size={22} />
             </S.DownloadLink>

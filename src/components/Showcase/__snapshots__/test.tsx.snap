@@ -593,7 +593,7 @@ exports[`<Showcase /> should render full showcase 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        aria-label="Adicionar a lista de desejos"
+                        aria-label="Add to wishlist"
                         class="c21"
                         fill="currentColor"
                         focusable="false"
@@ -615,12 +615,12 @@ exports[`<Showcase /> should render full showcase 1`] = `
                       <div
                         class="c23"
                       >
-                        R$ NaN
+                        $235.00
                       </div>
                       <div
                         class="c24"
                       >
-                        R$ NaN
+                        $215.00
                       </div>
                       <button
                         class="c25"

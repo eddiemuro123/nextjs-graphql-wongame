@@ -57,7 +57,7 @@ describe('<Cart />', () => {
     renderWithTheme(<Cart {...props} />)
 
     expect(
-      screen.getByRole('heading', { name: /Meu carrinho/i })
+      screen.getByRole('heading', { name: /My cart/i })
     ).toBeInTheDocument()
     expect(screen.getByTestId('Mock Cart')).toBeInTheDocument()
     expect(screen.getByTestId('Mock PaymentOptions')).toBeInTheDocument()

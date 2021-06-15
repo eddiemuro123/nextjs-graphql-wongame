@@ -8,10 +8,8 @@ export type CartIconProps = {
 
 const CartIcon = ({ quantity = 0 }: CartIconProps) => (
   <S.Wrapper>
-    {quantity > 0 && (
-      <S.Badge aria-label="Itens do carrinho">{quantity}</S.Badge>
-    )}
-    <ShoppingCart aria-label="Carrinho de compras" />
+    {quantity > 0 && <S.Badge aria-label="Cart items">{quantity}</S.Badge>}
+    <ShoppingCart aria-label="Shopping cart" />
   </S.Wrapper>
 )
 

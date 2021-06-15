@@ -18,7 +18,7 @@ const Profile = ({ children }: ProfileTemplateProps) => {
     <Base>
       <Container>
         <Heading lineLeft lineColor="secondary">
-          Meu perfil
+          My profile
         </Heading>
 
         <S.Main>

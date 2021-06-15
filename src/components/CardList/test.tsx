@@ -9,7 +9,7 @@ describe('<CardList />', () => {
     renderWithTheme(<CardList cards={cardMock} />)
 
     expect(
-      screen.getByRole('heading', { name: /Meus cartões/i })
+      screen.getByRole('heading', { name: /My cards/i })
     ).toBeInTheDocument()
 
     expect(screen.getByRole('img', { name: /visa/i })).toHaveAttribute(

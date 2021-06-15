@@ -22,7 +22,7 @@ const Wishlist = ({
   <Base>
     <Container>
       <Heading lineLeft lineColor="secondary">
-        Lista de desejos
+        Wishlist
       </Heading>
 
       {games.length ? (
@@ -33,8 +33,8 @@ const Wishlist = ({
         </Grid>
       ) : (
         <Empty
-          title="Sua lista de desejos está vazia"
-          description="Jogos adicionados na sua lista de desejos aparecerão aqui"
+          title="Your wishlist is empty"
+          description="Games added to your wishlist will appear here"
           hasLink
         />
       )}
@@ -43,7 +43,7 @@ const Wishlist = ({
     </Container>
 
     <Showcase
-      title="Talvez você se interesse"
+      title="Maybe you like"
       games={recommendedGames}
       highlight={recommendedHighLight}
     />

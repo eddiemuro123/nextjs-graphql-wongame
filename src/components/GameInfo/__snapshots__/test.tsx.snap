@@ -246,7 +246,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
     class="c2 c3"
     color="primary"
   >
-    R$ 210,00
+    $210.00
   </div>
   <p
     class="c4"
@@ -276,7 +276,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
         />
       </svg>
       <span>
-        Adicionar ao carrinho
+        Add to cart
       </span>
     </button>
     <button
@@ -299,7 +299,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
         />
       </svg>
       <span>
-        Lista de desejos
+        Wishlist
       </span>
     </button>
   </div>

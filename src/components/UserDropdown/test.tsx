@@ -18,12 +18,10 @@ describe('<UserDropdown />', () => {
     userEvent.click(screen.getByText(/Caio/i))
 
     expect(
-      screen.getByRole('link', { name: /meu perfil/i })
+      screen.getByRole('link', { name: /my account/i })
     ).toBeInTheDocument()
 
-    expect(
-      screen.getByRole('link', { name: /Lista de desejos/i })
-    ).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /sair/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Wishlist/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Log out/i })).toBeInTheDocument()
   })
 })

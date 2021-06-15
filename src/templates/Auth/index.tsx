@@ -23,18 +23,16 @@ const Auth = ({ title, children }: AuthProps) => {
 
           <div>
             <Heading color="white" size="huge">
-              Todos os seus jogos favoritos em um só lugar
+              All your favorite games in one place
             </Heading>
 
             <S.Subtitle>
-              <strong>WON</strong> é a melhor e mais completa plataforma de
-              jogos.
+              <strong>WON</strong> is the best and most complete platform for
+              games.
             </S.Subtitle>
           </div>
 
-          <S.Footer>
-            Won Games {getCurrentYear} © Todos os Direitos Reservados
-          </S.Footer>
+          <S.Footer>Won Games {getCurrentYear} © All Rights Reserverd</S.Footer>
         </S.BannerContent>
       </S.BannerBlock>
 

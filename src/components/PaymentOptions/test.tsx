@@ -13,7 +13,7 @@ describe('<PaymentOptions />', () => {
 
     expect(screen.getByLabelText(/4325/)).toBeInTheDocument()
     expect(screen.getByLabelText(/4326/)).toBeInTheDocument()
-    expect(screen.getByText(/Adicionar um novo cartão/)).toBeInTheDocument()
+    expect(screen.getByText(/Add a new credit card/)).toBeInTheDocument()
   })
 
   it('should handle select card when clicking on the label', async () => {
@@ -34,7 +34,7 @@ describe('<PaymentOptions />', () => {
       <PaymentOptions cards={cardsMocks} handlePayment={handlePayments} />
     )
 
-    userEvent.click(screen.getByRole('button', { name: /Comprar agora/i }))
+    userEvent.click(screen.getByRole('button', { name: /Buy now/i }))
     expect(handlePayments).not.toHaveBeenCalled()
   })
 
@@ -46,7 +46,7 @@ describe('<PaymentOptions />', () => {
     )
 
     userEvent.click(screen.getByLabelText(/4325/))
-    userEvent.click(screen.getByRole('button', { name: /Comprar agora/i }))
+    userEvent.click(screen.getByRole('button', { name: /Buy now/i }))
 
     await waitFor(() => {
       expect(handlePayments).toHaveBeenCalled()

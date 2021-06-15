@@ -226,7 +226,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
         <input
           class="c5"
           name="password"
-          placeholder="Senha"
+          placeholder="Password"
           type="password"
           value=""
         />
@@ -268,7 +268,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
         <input
           class="c5"
           name="confirm-password"
-          placeholder="Confirmar senha"
+          placeholder="Confirm Password"
           type="password"
           value=""
         />
@@ -278,18 +278,18 @@ exports[`<FormSignUp /> should render the form 1`] = `
       class="c6 c7"
     >
       <span>
-        Cadastrar agora!
+        Sign Up now!
       </span>
     </button>
     <div
       class="c8"
     >
-      Já possui uma conta?
+      Already have an account?
        
       <a
         href="/sign-in"
       >
-        Entre agora
+        Sign In
       </a>
     </div>
   </form>

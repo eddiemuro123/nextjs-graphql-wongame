@@ -31,7 +31,7 @@ const Cart = ({
     <Base>
       <Container>
         <Heading lineLeft lineColor="secondary">
-          Meu carrinho
+          My cart
         </Heading>
 
         {items?.length ? (
@@ -42,8 +42,8 @@ const Cart = ({
           </S.Content>
         ) : (
           <Empty
-            title="Seu carrinho está vazio"
-            description="Visite nossa biblioteca e explores incríveis jogos e ofertas"
+            title="You cart is empty"
+            description="Visit our library and explore amazing games and offers"
             hasLink
           />
         )}
@@ -52,7 +52,7 @@ const Cart = ({
       </Container>
 
       <Showcase
-        title="Talvez você se interesse"
+        title="Maybe you like"
         games={recommendedGames}
         highlight={recommendedHighLight}
       />

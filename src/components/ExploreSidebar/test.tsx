@@ -12,47 +12,43 @@ describe('<ExploreSidebar />', () => {
   it('should render headings', () => {
     renderWithTheme(<ExploreSidebar items={items} onFilter={jest.fn()} />)
 
-    expect(screen.getByRole('heading', { name: /Preço/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Price/i })).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { name: /Filtrar por/i })
+      screen.getByRole('heading', { name: /Sort by/i })
     ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /Sistema/i })
-    ).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /Gênero/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /System/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Genre/i })).toBeInTheDocument()
   })
 
   it('should render inputs', () => {
     renderWithTheme(<ExploreSidebar items={items} onFilter={jest.fn()} />)
 
     expect(
-      screen.getByRole('checkbox', { name: /Abaixo de R\$50/i })
+      screen.getByRole('checkbox', { name: /Under \$50/i })
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('radio', { name: /Menor para maior/i })
+      screen.getByRole('radio', { name: /Low to high/i })
     ).toBeInTheDocument()
   })
 
   it('should render filter button', () => {
     renderWithTheme(<ExploreSidebar items={items} onFilter={jest.fn()} />)
 
-    expect(screen.getByRole('button', { name: /Filtrar/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Filter/i })).toBeInTheDocument()
   })
 
   it('should check initial values that are passed', () => {
     renderWithTheme(
       <ExploreSidebar
         items={items}
-        initialValues={{ windows: true, filtrar_por: 'menor-para-maior' }}
+        initialValues={{ windows: true, sort_by: 'low-to-high' }}
         onFilter={jest.fn()}
       />
     )
 
     expect(screen.getByRole('checkbox', { name: /windows/i })).toBeChecked()
-    expect(
-      screen.getByRole('radio', { name: /Menor para maior/i })
-    ).toBeChecked()
+    expect(screen.getByRole('radio', { name: /low to high/i })).toBeChecked()
   })
 
   it('should filter with initial values', () => {
@@ -61,16 +57,16 @@ describe('<ExploreSidebar />', () => {
     renderWithTheme(
       <ExploreSidebar
         items={items}
-        initialValues={{ windows: true, filtrar_por: 'menor-para-maior' }}
+        initialValues={{ windows: true, sort_by: 'low-to-high' }}
         onFilter={onFilter}
       />
     )
 
-    userEvent.click(screen.getByRole('button', { name: /Filtrar/i }))
+    userEvent.click(screen.getByRole('button', { name: /Filter/i }))
 
     expect(onFilter).toBeCalledWith({
       windows: true,
-      filtrar_por: 'menor-para-maior'
+      sort_by: 'low-to-high'
     })
   })
 
@@ -81,13 +77,13 @@ describe('<ExploreSidebar />', () => {
 
     userEvent.click(screen.getByLabelText(/windows/i))
     userEvent.click(screen.getByLabelText(/linux/i))
-    userEvent.click(screen.getByLabelText(/menor para maior/i))
-    userEvent.click(screen.getByRole('button', { name: /Filtrar/i }))
+    userEvent.click(screen.getByLabelText(/low to high/i))
+    userEvent.click(screen.getByRole('button', { name: /filter/i }))
 
     expect(onFilter).toBeCalledWith({
       windows: true,
       linux: true,
-      filtrar_por: 'menor-para-maior'
+      sort_by: 'low-to-high'
     })
   })
 
@@ -96,12 +92,12 @@ describe('<ExploreSidebar />', () => {
 
     renderWithTheme(<ExploreSidebar items={items} onFilter={onFilter} />)
 
-    userEvent.click(screen.getByLabelText(/menor para maior/i))
-    userEvent.click(screen.getByLabelText(/maior para menor/i))
-    userEvent.click(screen.getByRole('button', { name: /Filtrar/i }))
+    userEvent.click(screen.getByLabelText(/low to high/i))
+    userEvent.click(screen.getByLabelText(/high to low/i))
+    userEvent.click(screen.getByRole('button', { name: /Filter/i }))
 
     expect(onFilter).toBeCalledWith({
-      filtrar_por: 'maior-para-menor'
+      sort_by: 'high-to-low'
     })
   })
 
@@ -119,9 +115,9 @@ describe('<ExploreSidebar />', () => {
 
     const Element = container.firstChild
     expect(Element).not.toHaveStyleRule('opacity', '1', variant)
-    userEvent.click(screen.getByLabelText(/abrir filtros/))
+    userEvent.click(screen.getByLabelText(/open filters/))
     expect(Element).toHaveStyleRule('opacity', '1', variant)
-    userEvent.click(screen.getByLabelText(/fechar filtros/))
+    userEvent.click(screen.getByLabelText(/close filters/))
     expect(Element).not.toHaveStyleRule('opacity', '1', variant)
   })
 })

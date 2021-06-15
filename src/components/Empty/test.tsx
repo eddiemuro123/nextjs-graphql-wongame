@@ -14,7 +14,7 @@ describe('<Empty />', () => {
 
     expect(
       screen.getByRole('img', {
-        name: /Um gamer jogando vídeo-game num sofá/i
+        name: /A gamer playing video games on the couch/i
       })
     ).toBeInTheDocument()
 
@@ -23,7 +23,7 @@ describe('<Empty />', () => {
     ).toBeInTheDocument()
     expect(screen.getByText(/A simple description/i)).toBeInTheDocument()
     expect(
-      screen.getByRole('link', { name: /Voltar para a loja/i })
+      screen.getByRole('link', { name: /Back to the store/i })
     ).toHaveAttribute('href', '/')
 
     expect(container.parentElement).toMatchSnapshot()
@@ -33,7 +33,7 @@ describe('<Empty />', () => {
     renderWithTheme(<Empty {...props} />)
 
     expect(
-      screen.queryByRole('link', { name: /Voltar para a loja/i })
+      screen.queryByRole('link', { name: /Back to the store/i })
     ).not.toBeInTheDocument()
   })
 })

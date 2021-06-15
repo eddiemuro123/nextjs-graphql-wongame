@@ -6,7 +6,7 @@ import GameItem from '.'
 const props = {
   img: 'https://source.unsplash.com/user/willianjusten/151x70',
   title: 'Red Dead Redemption 2',
-  price: 'R$ 215,00'
+  price: '$215,00'
 }
 
 describe('<GameItem />', () => {
@@ -17,7 +17,7 @@ describe('<GameItem />', () => {
       screen.getByRole('heading', { name: /Red Dead Redemption 2/i })
     ).toBeInTheDocument()
 
-    expect(screen.getByText('R$ 215,00')).toBeInTheDocument()
+    expect(screen.getByText('$215,00')).toBeInTheDocument()
 
     expect(
       screen.getByRole('img', { name: /Red Dead Redemption 2/i })
@@ -32,7 +32,7 @@ describe('<GameItem />', () => {
     renderWithTheme(<GameItem {...props} downloadLink={downloadLink} />)
 
     expect(
-      screen.getByRole('link', { name: `Baixe ${props.title} aqui` })
+      screen.getByRole('link', { name: `Download ${props.title} here` })
     ).toHaveAttribute('href', downloadLink)
   })
 

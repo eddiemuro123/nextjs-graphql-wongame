@@ -452,7 +452,7 @@ exports[`<Menu /> should render the menu 1`] = `
     >
       <svg
         aria-hidden="true"
-        aria-label="Abrir Menu"
+        aria-label="Open Menu"
         class="c3"
         fill="currentColor"
         focusable="false"
@@ -573,13 +573,13 @@ exports[`<Menu /> should render the menu 1`] = `
         class="c9 c10"
         href="/"
       >
-        Início
+        Home
       </a>
       <a
         class="c9 c10"
         href="/games"
       >
-        Biblioteca
+        Library
       </a>
     </div>
   </div>
@@ -591,7 +591,7 @@ exports[`<Menu /> should render the menu 1`] = `
     >
       <svg
         aria-hidden="true"
-        aria-label="Pesquisar"
+        aria-label="Search"
         class="c3"
         fill="currentColor"
         focusable="false"
@@ -627,7 +627,7 @@ exports[`<Menu /> should render the menu 1`] = `
               >
                 <svg
                   aria-hidden="true"
-                  aria-label="Carrinho de compras"
+                  aria-label="Shopping cart"
                   class="c3"
                   fill="currentColor"
                   focusable="false"
@@ -655,7 +655,7 @@ exports[`<Menu /> should render the menu 1`] = `
                   class="c20 c21"
                 >
                   <img
-                    alt="Um gamer jogando vídeo-game num sofá"
+                    alt="A gamer playing video games on the couch"
                     class="c22 c23"
                     role="img"
                     src="/img/empty.svg"
@@ -663,19 +663,19 @@ exports[`<Menu /> should render the menu 1`] = `
                   <h2
                     class="c24 c25"
                   >
-                    Seu carrinho está vazio
+                    Your cart is empty
                   </h2>
                   <p
                     class="c26 c27"
                   >
-                    Visite nossa biblioteca e explores incríveis jogos e ofertas
+                    Visit our library and explore amazing games and offers
                   </p>
                   <a
                     class="c28"
                     href="/"
                   >
                     <span>
-                      Voltar para a loja
+                      Back to the store
                     </span>
                   </a>
                 </main>
@@ -695,7 +695,7 @@ exports[`<Menu /> should render the menu 1`] = `
           >
             <svg
               aria-hidden="true"
-              aria-label="Carrinho de compras"
+              aria-label="Shopping cart"
               class="c3"
               fill="currentColor"
               focusable="false"
@@ -722,7 +722,7 @@ exports[`<Menu /> should render the menu 1`] = `
         href="/sign-in"
       >
         <span>
-          Entrar
+          Sign In
         </span>
       </a>
     </div>
@@ -733,7 +733,7 @@ exports[`<Menu /> should render the menu 1`] = `
   >
     <svg
       aria-hidden="true"
-      aria-label="Fechar Menu"
+      aria-label="Close Menu"
       class="c3"
       fill="currentColor"
       focusable="false"
@@ -755,13 +755,13 @@ exports[`<Menu /> should render the menu 1`] = `
         class="c9 c10"
         href="/"
       >
-        Início
+        Home
       </a>
       <a
         class="c9 c10"
         href="/games"
       >
-        Biblioteca
+        Library
       </a>
     </div>
     <div
@@ -772,18 +772,18 @@ exports[`<Menu /> should render the menu 1`] = `
         href="/sign-in"
       >
         <span>
-          Entrar
+          Sign In
         </span>
       </a>
       <span>
-        ou
+        or
       </span>
       <a
         class="c33"
         href="/sign-up"
         title="Sign Up"
       >
-        Registrar-se
+        Sign Up
       </a>
     </div>
   </nav>

@@ -15,13 +15,13 @@ describe('<Auth />', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /Todos os seus jogos favoritos em um só lugar/i
+        name: /All your favorite games in one place/i
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
-        name: /é a melhor e mais completa plataforma de jogos./i
+        name: /is the best and most complete platform for games./i
       })
     ).toBeInTheDocument()
 
