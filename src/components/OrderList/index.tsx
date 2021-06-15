@@ -10,15 +10,15 @@ export type OrderListProps = {
 const OrderList = ({ items }: OrderListProps) => (
   <S.Wrapper>
     <Heading lineBottom color="black" lineColor="primary" size="small">
-      Minhas compras
+      My orders
     </Heading>
 
     {items?.length ? (
-      items.map((item) => <GameItem key={item.downloadLink} {...item} />)
+      items.map((item) => <GameItem key={item.downloadLink!} {...item} />)
     ) : (
       <Empty
-        title="Você ainda não efetuou uma compra"
-        description="Visite nossa biblioteca e explores incríveis jogos e ofertas"
+        title="You haven't made a purchase yet."
+        description="Visit our library and explore amazing games and offers"
         hasLink
       />
     )}
