@@ -149,7 +149,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
         <input
           class="c5"
           name="name"
-          placeholder="Nome"
+          placeholder="Name"
           type="name"
           value=""
         />

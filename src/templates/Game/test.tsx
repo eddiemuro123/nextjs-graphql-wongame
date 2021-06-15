@@ -4,7 +4,6 @@ import galleryMock from 'components/Gallery/mock'
 import gameInfoMock from 'components/GameInfo/mock'
 import gameDetailsMock from 'components/GameDetails/mock'
 import gamesMock from 'components/GameCardSlider/mock'
-import highlightMock from 'components/Highlight/mock'
 
 import Game, { GameTemplateProps } from '.'
 
@@ -18,8 +17,8 @@ const props: GameTemplateProps = {
   description: `<h1>Custom HTML</h1>`,
   details: gameDetailsMock as GameDetailsProps,
   upcomingGames: gamesMock,
-  upcomingHighLight: highlightMock,
-  recommendedGames: gamesMock
+  recommendedGames: gamesMock,
+  recommendedTitle: 'Title'
 }
 
 jest.mock('components/Menu', () => ({
@@ -65,7 +64,7 @@ describe('<Game />', () => {
     expect(screen.getByTestId('Mock Gallery')).toBeInTheDocument()
     expect(screen.getByTestId('Mock GameDetails')).toBeInTheDocument()
     expect(screen.getByTestId('Mock GameInfo')).toBeInTheDocument()
-    expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(2)
+    expect(screen.getByTestId('Mock Showcase')).toBeInTheDocument()
     expect(screen.getByText(/Custom HTML/i)).toBeInTheDocument()
   })
 

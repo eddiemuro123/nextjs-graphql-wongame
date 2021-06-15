@@ -7,7 +7,7 @@ describe('<FormSignUp />', () => {
   it('should render the form', () => {
     const { container } = renderWithTheme(<FormSignUp />)
 
-    expect(screen.getByPlaceholderText(/nome/i)).toBeInTheDocument()
+    expect(screen.getByPlaceholderText(/name/i)).toBeInTheDocument()
     expect(screen.getByPlaceholderText(/email/i)).toBeInTheDocument()
     expect(screen.getAllByPlaceholderText(/Password/i)).toHaveLength(2)
     expect(screen.getByPlaceholderText(/Confirm password/i)).toBeInTheDocument()
