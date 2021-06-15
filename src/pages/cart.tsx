@@ -2,7 +2,6 @@ import Cart, { CartProps } from 'templates/Cart'
 
 import gamesMock from 'components/GameCardSlider/mock'
 import cardsMock from 'components/PaymentOptions/mock'
-import highLightMock from 'components/Highlight/mock'
 import { initializeApollo } from 'utils/apollo'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
@@ -27,6 +26,7 @@ export async function getServerSideProps() {
       recommendedHighLight: highlightMapper(
         data.recommended?.section?.highlight
       ),
+      cartTitle: data.recommended?.section?.title,
       items: gamesMock.slice(0, 2),
       total: 'R$ 470,00',
       cards: cardsMock
