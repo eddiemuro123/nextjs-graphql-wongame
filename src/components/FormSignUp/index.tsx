@@ -10,7 +10,7 @@ const FormSignUp = () => (
     <form>
       <TextField
         name="name"
-        placeholder="Nome"
+        placeholder="Name"
         type="name"
         icon={<AccountCircle />}
       />
