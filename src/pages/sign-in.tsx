@@ -3,7 +3,7 @@ import Auth from '../templates/Auth'
 
 const SignIn = () => {
   return (
-    <Auth title="Entrar">
+    <Auth title="Sign In">
       <FormSignIn />
     </Auth>
   )

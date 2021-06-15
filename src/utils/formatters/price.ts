@@ -4,5 +4,5 @@ export function formatPrice(price: number | bigint): string {
         style: 'currency',
         currency: 'USD'
       }).format(price)
-    : 'Gratuito'
+    : 'Free'
 }
