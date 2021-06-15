@@ -26,7 +26,7 @@ export const gamesMapper = (games: QueryGames_games[] | null | undefined) => {
       title: game.name,
       slug: game.slug,
       developer: game.developers[0].name,
-      img: game.cover?.url,
+      img: game.cover?.url ?? 'img/img_game_fallback.png',
       price: game.price
     }))
   )
