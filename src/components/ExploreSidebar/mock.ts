@@ -1,53 +1,53 @@
 export default [
   {
-    title: 'Preço',
-    name: 'preco',
+    title: 'Price',
+    name: 'price',
     type: 'checkbox',
     fields: [
       {
-        label: 'Abaixo de R$50',
+        label: 'Under $50',
         name: 'abaixo-50'
       },
       {
-        label: 'Abaixo de R$100',
-        name: 'abaixo-100'
+        label: 'Under $100',
+        name: 'under-100'
       },
       {
-        label: 'Abaixo de R$150',
-        name: 'abaixo-150'
+        label: 'Under $150',
+        name: 'under-150'
       },
       {
-        label: 'Abaixo de R$200',
-        name: 'abaixo-200'
+        label: 'Under $200',
+        name: 'under-200'
       },
       {
-        label: 'Gratuito',
-        name: 'gratuito'
+        label: 'Free',
+        name: 'free'
       },
       {
-        label: 'Em desconto',
-        name: 'em-desconto'
+        label: 'Discounted',
+        name: 'discounted'
       }
     ]
   },
   {
-    title: 'Filtrar por',
-    name: 'filtrar_por',
+    title: 'Sort by',
+    name: 'sort_by',
     type: 'radio',
     fields: [
       {
-        label: 'Maior para menor',
-        name: 'maior-para-menor'
+        label: 'High to Low',
+        name: 'high-to-low'
       },
       {
-        label: 'Menor para maior',
-        name: 'menor-para-maior'
+        label: 'Low to High',
+        name: 'low-to-high'
       }
     ]
   },
   {
-    title: 'Sistema',
-    name: 'sistema',
+    title: 'System',
+    name: 'system',
     type: 'checkbox',
     fields: [
       {
@@ -65,17 +65,17 @@ export default [
     ]
   },
   {
-    title: 'Gênero',
-    name: 'genero',
+    title: 'Genre',
+    name: 'genre',
     type: 'checkbox',
     fields: [
       {
-        label: 'Ação',
+        label: 'Action',
         name: 'acao'
       },
       {
-        label: 'Aventura',
-        name: 'aventura'
+        label: 'Adventure',
+        name: 'adventure'
       },
       {
         label: 'FPS',
@@ -94,12 +94,12 @@ export default [
         name: 'indie'
       },
       {
-        label: 'Tiros',
-        name: 'tiros'
+        label: 'Shooters',
+        name: 'shooters'
       },
       {
-        label: 'Simulador',
-        name: 'simulador'
+        label: 'Simulation',
+        name: 'simulation'
       }
     ]
   }

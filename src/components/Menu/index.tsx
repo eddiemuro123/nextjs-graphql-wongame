@@ -24,7 +24,7 @@ const Menu = ({ username }: MenuProps) => {
     <S.Wrapper>
       <MediaMatch lessThan="medium">
         <S.IconWrapper onClick={() => setIsOpen(true)}>
-          <MenuIcon aria-label="Abrir Menu" />
+          <MenuIcon aria-label="Open Menu" />
         </S.IconWrapper>
       </MediaMatch>
       <S.LogoWrapper>
@@ -38,16 +38,16 @@ const Menu = ({ username }: MenuProps) => {
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
           <Link href="/" passHref>
-            <S.MenuLink>Início</S.MenuLink>
+            <S.MenuLink>Home</S.MenuLink>
           </Link>
           <Link href="/games" passHref>
-            <S.MenuLink>Biblioteca</S.MenuLink>
+            <S.MenuLink>Library</S.MenuLink>
           </Link>
         </S.MenuNav>
       </MediaMatch>
       <S.MenuGroup>
         <S.IconWrapper>
-          <SearchIcon aria-label="Pesquisar" />
+          <SearchIcon aria-label="Search" />
         </S.IconWrapper>
         <S.IconWrapper>
           <MediaMatch greaterThan="medium">
@@ -64,7 +64,7 @@ const Menu = ({ username }: MenuProps) => {
         <MediaMatch greaterThan="medium">
           {!username ? (
             <Link href="/sign-in" passHref>
-              <Button as="a">Entrar</Button>
+              <Button as="a">Sign In</Button>
             </Link>
           ) : (
             <UserDropdown username={username} />
@@ -73,22 +73,22 @@ const Menu = ({ username }: MenuProps) => {
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
-        <CloseIcon aria-label="Fechar Menu" onClick={() => setIsOpen(false)} />
+        <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
           <Link href="/" passHref>
-            <S.MenuLink>Início</S.MenuLink>
+            <S.MenuLink>Home</S.MenuLink>
           </Link>
           <Link href="/games" passHref>
-            <S.MenuLink>Biblioteca</S.MenuLink>
+            <S.MenuLink>Library</S.MenuLink>
           </Link>
 
           {!!username && (
             <>
               <Link href="/profile/me" passHref>
-                <S.MenuLink>Minha Conta</S.MenuLink>
+                <S.MenuLink>My account</S.MenuLink>
               </Link>
               <Link href="/wishlist" passHref>
-                <S.MenuLink>Lista de desejos</S.MenuLink>
+                <S.MenuLink>Wishlist</S.MenuLink>
               </Link>
             </>
           )}
@@ -98,13 +98,13 @@ const Menu = ({ username }: MenuProps) => {
           <S.RegisterBox>
             <Link href="/sign-in" passHref>
               <Button fullWidth size="large" as="a">
-                Entrar
+                Sign In
               </Button>
             </Link>
-            <span>ou</span>
+            <span>or</span>
 
             <Link href="/sign-up" passHref>
-              <S.CreateAccount title="Sign Up">Registrar-se</S.CreateAccount>
+              <S.CreateAccount title="Sign Up">Sign Up</S.CreateAccount>
             </Link>
           </S.RegisterBox>
         )}

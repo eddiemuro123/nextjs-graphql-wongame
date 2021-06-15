@@ -34,7 +34,7 @@ describe('<Profile />', () => {
     renderWithTheme(<Profile>Lorem Ipsum</Profile>)
 
     expect(screen.getByText('Lorem Ipsum')).toBeInTheDocument()
-    expect(screen.getByText('Meu perfil')).toBeInTheDocument()
+    expect(screen.getByText('My profile')).toBeInTheDocument()
     expect(screen.getByTestId('Mock ProfileMenu')).toBeInTheDocument()
   })
 })

@@ -72,7 +72,7 @@ exports[`<Empty /> should render correctly 1`] = `
       class="c0"
     >
       <img
-        alt="Um gamer jogando vídeo-game num sofá"
+        alt="A gamer playing video games on the couch"
         class="c1"
         role="img"
         src="/img/empty.svg"
@@ -92,7 +92,7 @@ exports[`<Empty /> should render correctly 1`] = `
         href="/"
       >
         <span>
-          Voltar para a loja
+          Back to the store
         </span>
       </a>
     </main>

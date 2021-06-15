@@ -36,9 +36,7 @@ describe('<GameCard />', () => {
       `/game/${props.slug}`
     )
 
-    expect(
-      screen.getByLabelText(/Adicionar a lista de desejos/i)
-    ).toBeInTheDocument()
+    expect(screen.getByLabelText(/Add to wishlist/i)).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
   })
@@ -46,7 +44,7 @@ describe('<GameCard />', () => {
   it('should render price in label', () => {
     renderWithTheme(<GameCard {...props} />)
 
-    const price = screen.getByText('R$ 235,00')
+    const price = screen.getByText('$235.00')
 
     expect(price).not.toHaveStyle({ textDecoration: 'line-through' })
 
@@ -56,11 +54,11 @@ describe('<GameCard />', () => {
   it('should render a line-through in price when promotional', () => {
     renderWithTheme(<GameCard {...props} promotionalPrice={15} />)
 
-    expect(screen.getByText('R$ 235,00')).toHaveStyle({
+    expect(screen.getByText('$235.00')).toHaveStyle({
       textDecoration: 'line-through'
     })
 
-    expect(screen.getByText('R$ 15,00')).not.toHaveStyle({
+    expect(screen.getByText('$15.00')).not.toHaveStyle({
       textDecoration: 'line-through'
     })
   })
@@ -68,9 +66,7 @@ describe('<GameCard />', () => {
   it('should render a filled Favorite icon when favorite is true', () => {
     renderWithTheme(<GameCard {...props} favorite />)
 
-    expect(
-      screen.getByLabelText(/Remover da lista de desejos/i)
-    ).toBeInTheDocument()
+    expect(screen.getByLabelText(/Remove from wishlist/i)).toBeInTheDocument()
   })
 
   it('should call onFav method when favorite is clicked', () => {

@@ -36,7 +36,7 @@ describe('<Games />', () => {
     expect(screen.getByTestId('Mock GameCard')).toBeInTheDocument()
 
     expect(
-      screen.getByRole('button', { name: /mostrar mais/i })
+      screen.getByRole('button', { name: /Show More/i })
     ).toBeInTheDocument()
   })
 })

@@ -9,7 +9,7 @@ export type CardListProps = {
 const CardList = ({ cards }: CardListProps) => (
   <>
     <Heading lineBottom color="black" size="small">
-      Meus cartões
+      My cards
     </Heading>
 
     {cards?.map((card) => (

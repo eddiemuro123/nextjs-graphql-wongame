@@ -7,37 +7,33 @@ import * as S from './styles'
 const FormProfile = () => (
   <S.Wrapper>
     <Heading size="small" color="black" lineBottom lineColor="primary">
-      Meu perfil
+      My profile
     </Heading>
 
     <S.Form>
-      <TextField
-        name="nome"
-        placeholder="Nome"
-        label="Nome"
-      />
+      <TextField name="name" placeholder="Name" label="Name" />
       <TextField
         name="email"
         type="email"
         placeholder="Email"
-        label="Email" 
+        label="Email"
         initialValue="caioamfr@gmail.com"
         disabled
       />
       <TextField
         type="password"
-        name="senha"
-        placeholder="Digite sua senha"
-        label="Senha"
+        name="password"
+        placeholder="Your Password"
+        label="Password"
       />
       <TextField
         type="password"
         name="new_password"
-        placeholder="Nova senha"
-        label="Nova senha"
+        placeholder="New Password"
+        label="New Password"
       />
 
-      <Button size="large">Salvar</Button>
+      <Button size="large">Save</Button>
     </S.Form>
   </S.Wrapper>
 )

@@ -22,24 +22,24 @@ const FormSignUp = () => (
       />
       <TextField
         name="password"
-        placeholder="Senha"
+        placeholder="Password"
         type="password"
         icon={<Lock />}
       />
       <TextField
         name="confirm-password"
-        placeholder="Confirmar senha"
+        placeholder="Confirm Password"
         type="password"
         icon={<Lock />}
       />
       <Button size="large" fullWidth>
-        Cadastrar agora!
+        Sign Up now!
       </Button>
 
       <FormLink>
-        Já possui uma conta?{' '}
+        Already have an account?{' '}
         <Link href="/sign-in">
-          <a>Entre agora</a>
+          <a>Sign In</a>
         </Link>
       </FormLink>
     </form>

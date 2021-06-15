@@ -196,7 +196,7 @@ exports[`<GameCard /> should render correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        aria-label="Adicionar a lista de desejos"
+        aria-label="Add to wishlist"
         class="c7"
         fill="currentColor"
         focusable="false"
@@ -218,7 +218,7 @@ exports[`<GameCard /> should render correctly 1`] = `
       <div
         class="c9"
       >
-        R$ 235,00
+        $235.00
       </div>
       <button
         class="c10"
