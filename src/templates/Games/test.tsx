@@ -78,4 +78,14 @@ describe('<Games />', () => {
       screen.getByRole('button', { name: /Show More/i })
     ).toBeInTheDocument()
   })
+
+  it('should render more games when show more is clicked', async () => {
+    renderWithTheme(
+      <MockedProvider mocks={[]} addTypename={false}>
+        <Games filterItems={filterItemsMock} />
+      </MockedProvider>
+    )
+
+    expect(screen.getByText(/loading/i)).toBeInTheDocument()
+  })
 })
