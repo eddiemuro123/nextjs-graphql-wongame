@@ -167,6 +167,25 @@ export interface QueryHome_sections_popularGames {
   highlight: QueryHome_sections_popularGames_highlight | null;
 }
 
+export interface QueryHome_sections_upcomingGames_games_cover {
+  __typename: "UploadFile";
+  url: string;
+}
+
+export interface QueryHome_sections_upcomingGames_games_developers {
+  __typename: "Developer";
+  name: string;
+}
+
+export interface QueryHome_sections_upcomingGames_games {
+  __typename: "Game";
+  name: string;
+  slug: string;
+  cover: QueryHome_sections_upcomingGames_games_cover | null;
+  developers: QueryHome_sections_upcomingGames_games_developers[];
+  price: number;
+}
+
 export interface QueryHome_sections_upcomingGames_highlight_background {
   __typename: "UploadFile";
   url: string;
@@ -191,6 +210,7 @@ export interface QueryHome_sections_upcomingGames_highlight {
 export interface QueryHome_sections_upcomingGames {
   __typename: "ComponentPageSection";
   title: string | null;
+  games: QueryHome_sections_upcomingGames_games[];
   highlight: QueryHome_sections_upcomingGames_highlight | null;
 }
 

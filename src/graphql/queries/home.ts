@@ -49,6 +49,9 @@ export const QUERY_HOME = gql`
 
       upcomingGames {
         title
+        games {
+          ...GameFragment
+        }
         highlight {
           ...HighlightFragment
         }
