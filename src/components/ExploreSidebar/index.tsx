@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Close } from '@styled-icons/material-outlined/Close'
 import { FilterList } from '@styled-icons/material-outlined/FilterList'
 
@@ -8,6 +8,8 @@ import Checkbox from 'components/Checkbox'
 import Radio from 'components/Radio'
 
 import * as S from './styles'
+import { ParsedUrlQueryInput } from 'querystring'
+import xor from 'lodash.xor'
 
 export type ItemProps = {
   title: string
@@ -21,9 +23,7 @@ type Field = {
   name: string
 }
 
-type Values = {
-  [field: string]: boolean | string
-}
+type Values = ParsedUrlQueryInput
 
 export type ExploreSidebarProps = {
   items: ItemProps[]
@@ -39,12 +39,21 @@ const ExploreSidebar = ({
   const [values, setValues] = useState(initialValues)
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleChange = (name: string, value: string | boolean) => {
+  useEffect(() => {
+    onFilter(values)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values])
+
+  const handleRadio = (name: string, value: string | boolean) => {
     setValues((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleFilter = () => {
-    onFilter(values)
+  const handleCheckbox = (name: string, value: string) => {
+    const currentList = (values[name] as []) || []
+    setValues((prev) => ({ ...prev, [name]: xor(currentList, [value]) }))
+  }
+
+  const handleFilterMenu = () => {
     setIsOpen(false)
   }
 
@@ -52,8 +61,16 @@ const ExploreSidebar = ({
     <S.Wrapper isOpen={isOpen}>
       <S.Overlay aria-hidden={isOpen} />
       <S.IconWrapper>
-        <FilterList aria-label="open filters" onClick={() => setIsOpen(true)} />
-        <Close aria-label="close filters" onClick={() => setIsOpen(false)} />
+        <FilterList
+          role="button"
+          aria-label="open filters"
+          onClick={() => setIsOpen(true)}
+        />
+        <Close
+          role="button"
+          aria-label="close filters"
+          onClick={() => setIsOpen(false)}
+        />
       </S.IconWrapper>
 
       <S.Content>
@@ -70,8 +87,10 @@ const ExploreSidebar = ({
                   name={field.name}
                   label={field.label}
                   labelFor={field.name}
-                  isChecked={!!values[field.name]}
-                  onCheck={(value) => handleChange(field.name, value)}
+                  isChecked={(values[item.name] as string[])?.includes(
+                    field.name
+                  )}
+                  onCheck={() => handleCheckbox(item.name, field.name)}
                 />
               ))}
 
@@ -84,8 +103,10 @@ const ExploreSidebar = ({
                   name={item.name}
                   label={field.label}
                   labelFor={field.name}
-                  defaultChecked={field.name === values[item.name]}
-                  onChange={() => handleChange(item.name, field.name)}
+                  defaultChecked={
+                    String(field.name) === String(values[item.name])
+                  }
+                  onChange={() => handleRadio(item.name, field.name)}
                 />
               ))}
           </S.Items>
@@ -93,7 +114,7 @@ const ExploreSidebar = ({
       </S.Content>
 
       <S.Footer>
-        <Button fullWidth size="medium" onClick={handleFilter}>
+        <Button fullWidth size="medium" onClick={handleFilterMenu}>
           Filter
         </Button>
       </S.Footer>

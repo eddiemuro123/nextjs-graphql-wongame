@@ -3558,6 +3558,18 @@
     "@types/interpret" "*"
     "@types/node" "*"
 
+"@types/lodash.xor@^4.5.6":
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/@types/lodash.xor/-/lodash.xor-4.5.6.tgz#28ffbb779429ff6eac27db208d90124a00a0bff8"
+  integrity sha512-rD3zHQuR04SMUWEn6CHLGYNRHEFgakV4K9QhFFP/Ly5xdN2MWsy+gWFA4MxhY+sKKSSKjktjPVyBTo/6rUdTjA==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.170"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.170.tgz#0d67711d4bf7f4ca5147e9091b847479b87925d6"
+  integrity sha512-bpcvu/MKHHeYX+qeEN8GE7DIravODWdACVA1ctevD8CN24RhPZIKMn9ntfAsrvLfSX3cR5RrBKAbYm9bGs0A+Q==
+
 "@types/markdown-to-jsx@^6.11.3":
   version "6.11.3"
   resolved "https://registry.yarnpkg.com/@types/markdown-to-jsx/-/markdown-to-jsx-6.11.3.tgz#cdd1619308fecbc8be7e6a26f3751260249b020e"
@@ -10186,6 +10198,11 @@ lodash.uniq@4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
+lodash.xor@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.xor/-/lodash.xor-4.5.0.tgz#4d48ed7e98095b0632582ba714d3ff8ae8fb1db6"
+  integrity sha1-TUjtfpgJWwYyWCunFNP/iuj7HbY=
+
 lodash.xorby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.xorby/-/lodash.xorby-4.7.0.tgz#9c19a6f9f063a6eb53dd03c1b6871799801463d7"
@@ -10829,6 +10846,13 @@ next@^10.2.3:
     vm-browserify "1.1.2"
     watchpack "2.1.1"
 
+nextjs-progressbar@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/nextjs-progressbar/-/nextjs-progressbar-0.0.11.tgz#d8340e27f7f8cf8bca4b3ec187ebea40ea54297e"
+  integrity sha512-4JQkUHgDG6gz5r04lW06cMerKhQeXXq1RCSz2WqHMcJCDgKLCCqRokn603LlEORNpzBEY/pTZJIOlzf2eh4mFQ==
+  dependencies:
+    nprogress "^0.2.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -10996,6 +11020,11 @@ npmlog@^4.1.2:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 nth-check@^2.0.0:
   version "2.0.0"
