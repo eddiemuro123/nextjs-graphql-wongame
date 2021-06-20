@@ -4,7 +4,7 @@ import filterItemsMock from 'components/ExploreSidebar/mock'
 
 import { MockedProvider } from '@apollo/client/testing'
 
-import { fetchMoreMock, gamesMock } from './mock'
+import { fetchMoreMock, gamesMock, noGamesMock } from './mock'
 import Games from '.'
 import userEvent from '@testing-library/user-event'
 import apolloCache from 'utils/apolloCache'
@@ -41,7 +41,7 @@ jest.mock('templates/Base', () => ({
 describe('<Games />', () => {
   it('should render empty when no games found', async () => {
     renderWithTheme(
-      <MockedProvider mocks={[]} addTypename={false}>
+      <MockedProvider mocks={[noGamesMock]} addTypename={false}>
         <Games filterItems={filterItemsMock} />
       </MockedProvider>
     )
@@ -49,6 +49,21 @@ describe('<Games />', () => {
     expect(
       await screen.findByText(/We didn't find any games with this filter/i)
     ).toBeInTheDocument()
+  })
+
+  it('should change push router when selecting a filter', async () => {
+    renderWithTheme(
+      <MockedProvider mocks={[gamesMock, fetchMoreMock]} cache={apolloCache}>
+        <Games filterItems={filterItemsMock} />
+      </MockedProvider>
+    )
+
+    userEvent.click(await screen.findByRole('checkbox', { name: /windows/i }))
+
+    expect(push).toHaveBeenCalledWith({
+      pathname: '/games',
+      query: { platforms: ['windows'] }
+    })
   })
 
   it('should render sections', async () => {
@@ -72,27 +87,10 @@ describe('<Games />', () => {
       </MockedProvider>
     )
 
-    expect(
-      await screen.findByText(/Strangeland - Official Soundtrack/i)
-    ).toBeInTheDocument()
+    expect(await screen.findByText(/Sample Game/i)).toBeInTheDocument()
 
     userEvent.click(screen.getByRole('button', { name: /Show More/i }))
 
     expect(await screen.findByText(/Fetch More Game/i)).toBeInTheDocument()
-  })
-
-  it('should change push router when selecting a filter', async () => {
-    renderWithTheme(
-      <MockedProvider mocks={[gamesMock, fetchMoreMock]} cache={apolloCache}>
-        <Games filterItems={filterItemsMock} />
-      </MockedProvider>
-    )
-
-    userEvent.click(await screen.findByRole('checkbox', { name: /windows/i }))
-
-    expect(push).toHaveBeenCalledWith({
-      pathname: '/games',
-      query: { platforms: ['windows'] }
-    })
   })
 })
