@@ -39,14 +39,6 @@ jest.mock('templates/Base', () => ({
 }))
 
 describe('<Games />', () => {
-  it('should render loading when starting the template', () => {
-    renderWithTheme(
-      <MockedProvider mocks={[gamesMock]} addTypename={false}>
-        <Games filterItems={filterItemsMock} />
-      </MockedProvider>
-    )
-  })
-
   it('should render empty when no games found', async () => {
     renderWithTheme(
       <MockedProvider mocks={[]} addTypename={false}>
