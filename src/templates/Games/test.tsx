@@ -45,24 +45,6 @@ describe('<Games />', () => {
         <Games filterItems={filterItemsMock} />
       </MockedProvider>
     )
-
-    expect(screen.getByText(/loading.../i)).toBeInTheDocument()
-  })
-
-  it('should render sections', async () => {
-    renderWithTheme(
-      <MockedProvider mocks={[gamesMock]} addTypename={false}>
-        <Games filterItems={filterItemsMock} />
-      </MockedProvider>
-    )
-
-    expect(screen.getByText(/loading.../i)).toBeInTheDocument()
-
-    expect(await screen.findByText(/Price/i)).toBeInTheDocument()
-
-    expect(
-      screen.getByRole('button', { name: /Show More/i })
-    ).toBeInTheDocument()
   })
 
   it('should render empty when no games found', async () => {
@@ -74,6 +56,20 @@ describe('<Games />', () => {
 
     expect(
       await screen.findByText(/We didn't find any games with this filter/i)
+    ).toBeInTheDocument()
+  })
+
+  it('should render sections', async () => {
+    renderWithTheme(
+      <MockedProvider mocks={[gamesMock]} addTypename={false}>
+        <Games filterItems={filterItemsMock} />
+      </MockedProvider>
+    )
+
+    expect(await screen.findByText(/Price/i)).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('button', { name: /Show More/i })
     ).toBeInTheDocument()
   })
 
