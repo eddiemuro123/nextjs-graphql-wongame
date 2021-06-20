@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Close } from '@styled-icons/material-outlined/Close'
 import { FilterList } from '@styled-icons/material-outlined/FilterList'
 
@@ -39,6 +39,11 @@ const ExploreSidebar = ({
   const [values, setValues] = useState(initialValues)
   const [isOpen, setIsOpen] = useState(false)
 
+  useEffect(() => {
+    onFilter(values)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values])
+
   const handleRadio = (name: string, value: string | boolean) => {
     setValues((prev) => ({ ...prev, [name]: value }))
   }
@@ -48,8 +53,7 @@ const ExploreSidebar = ({
     setValues((prev) => ({ ...prev, [name]: xor(currentList, [value]) }))
   }
 
-  const handleFilter = () => {
-    onFilter(values)
+  const handleFilterMenu = () => {
     setIsOpen(false)
   }
 
@@ -57,8 +61,16 @@ const ExploreSidebar = ({
     <S.Wrapper isOpen={isOpen}>
       <S.Overlay aria-hidden={isOpen} />
       <S.IconWrapper>
-        <FilterList aria-label="open filters" onClick={() => setIsOpen(true)} />
-        <Close aria-label="close filters" onClick={() => setIsOpen(false)} />
+        <FilterList
+          role="button"
+          aria-label="open filters"
+          onClick={() => setIsOpen(true)}
+        />
+        <Close
+          role="button"
+          aria-label="close filters"
+          onClick={() => setIsOpen(false)}
+        />
       </S.IconWrapper>
 
       <S.Content>
@@ -102,7 +114,7 @@ const ExploreSidebar = ({
       </S.Content>
 
       <S.Footer>
-        <Button fullWidth size="medium" onClick={handleFilter}>
+        <Button fullWidth size="medium" onClick={handleFilterMenu}>
           Filter
         </Button>
       </S.Footer>
