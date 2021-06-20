@@ -11,6 +11,7 @@ import { useQueryGames } from 'graphql/queries/games'
 import { useRouter } from 'next/router'
 import { parseQueryStringToFilter, parseQueryStringToWhere } from 'utils/filter'
 import { ParsedUrlQueryInput } from 'querystring'
+import Empty from 'components/Empty'
 
 export type GamesTemplateProps = {
   filterItems: ItemProps[]
@@ -53,24 +54,33 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
           })}
         />
         <section>
-          <Grid>
-            {data?.games.map((game) => (
-              <GameCard
-                key={game.slug}
-                title={game.name}
-                slug={game.slug}
-                developer={game.developers[0].name}
-                img={String(game.cover?.url)}
-                price={game.price}
-              />
-            ))}
-          </Grid>
+          {data.games.length ? (
+            <>
+              <Grid>
+                {data?.games.map((game) => (
+                  <GameCard
+                    key={game.slug}
+                    title={game.name}
+                    slug={game.slug}
+                    developer={game.developers[0].name}
+                    img={String(game.cover?.url)}
+                    price={game.price}
+                  />
+                ))}
+              </Grid>
 
-          {!loading && data?.games.length && (
-            <S.ShowMore role="button" onClick={handleShowMore}>
-              <p>Show More</p>
-              <ArrowDown size={35} />
-            </S.ShowMore>
+              {!loading && data?.games.length && (
+                <S.ShowMore role="button" onClick={handleShowMore}>
+                  <p>Show More</p>
+                  <ArrowDown size={35} />
+                </S.ShowMore>
+              )}
+            </>
+          ) : (
+            <Empty
+              title=":("
+              description="We didn't find any games with this filter"
+            />
           )}
         </section>
       </S.Main>
