@@ -68,6 +68,20 @@ const GlobalStyles: GlobalStyleComponent<
       css`
         background-color: ${theme.colors.mainBg};
       `}
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #02030a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #bebebe;
+        border-radius: 10px;
+      }
+      ::selection {
+        background-color: ${theme.colors.mainBg};
+      }
     }
   `}
 `
