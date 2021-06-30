@@ -7,12 +7,11 @@ module.exports = {
     '!src/**/stories.tsx',
     '!src/pages/**/*.tsx',
     '!src/styles/**/*.ts',
-    '!src/pages/**/*.tsx',
     '!src/styles/**/*.ts',
     '!src/utils/apollo.ts',
-    '!src/types/**/*.ts',
     '!src/utils/apolloCache.ts',
     '!src/types/**/*.d.ts',
+    '!src/types/**/*.ts',
     '!src/graphql/**/*.ts',
     '!src/**/mock.ts'
   ],
