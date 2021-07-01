@@ -2,7 +2,7 @@ import { initializeApollo } from 'utils/apollo'
 import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
 import { QUERY_GAMES } from 'graphql/queries/games'
 
-import { parseQueryStringToWhere } from 'utils/filter/index'
+import { parseQueryStringToWhere } from 'utils/filter'
 
 import GamesTemplate, { GamesTemplateProps } from 'templates/Games'
 import { GetServerSidePropsContext } from 'next'

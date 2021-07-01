@@ -20,21 +20,21 @@ export const bannerMapper = (banners: QueryHome_banners[]) => {
 }
 
 export const gamesMapper = (games: QueryGames_games[] | null | undefined) => {
-  return (
-    games &&
-    games.map((game) => ({
-      title: game.name,
-      slug: game.slug,
-      developer: game.developers[0].name,
-      img: game.cover?.url ?? 'img/img_game_fallback.png',
-      price: game.price
-    }))
-  )
+  if (!games) return []
+  return games.map((game) => ({
+    id: game.id,
+    title: game.name,
+    slug: game.slug,
+    developer: game.developers[0].name,
+    img: game.cover?.url ?? 'img/img_game_fallback.png',
+    price: game.price
+  }))
 }
 
 export const highlightMapper = (
   highlight: QueryHome_sections_freeGames_highlight | null | undefined
 ) => {
+  if (!highlight) return null
   return (
     highlight && {
       title: highlight?.title,
