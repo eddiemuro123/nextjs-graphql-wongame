@@ -14,6 +14,7 @@ export const Wrapper = styled.div<WrapperProps>`
     display: flex;
     flex-direction: column;
     align-self: start;
+    cursor: initial;
 
     ${isEmpty &&
     css`

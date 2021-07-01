@@ -71,6 +71,7 @@ exports[`<CartList /> should render the cart list 1`] = `
   -webkit-align-self: start;
   -ms-flex-item-align: start;
   align-self: start;
+  cursor: initial;
 }
 
 .c7 {
