@@ -38,6 +38,13 @@ jest.mock('templates/Base', () => ({
   }
 }))
 
+jest.mock('next/link', () => ({
+  __esModule: true,
+  default: function Mock({ children }: { children: React.ReactNode }) {
+    return <div data-testid="Mock Base">{children}</div>
+  }
+}))
+
 describe('<Games />', () => {
   it('should render empty when no games found', async () => {
     renderWithTheme(
