@@ -9,10 +9,15 @@ export type DropdownProps = {
 const Dropdown = ({ title, children }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
+  function handleToggle() {
+    setIsOpen((prev) => !prev)
+  }
+
   return (
     <S.Wrapper isOpen={isOpen}>
-      <S.Title onClick={() => setIsOpen(!isOpen)}>{title}</S.Title>
+      <S.Title onClick={handleToggle}>{title}</S.Title>
       <S.Content aria-hidden={!isOpen}>{children}</S.Content>
+      <S.Overlay aria-hidden={!isOpen} onClick={handleToggle} />
     </S.Wrapper>
   )
 }
