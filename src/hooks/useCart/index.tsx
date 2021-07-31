@@ -24,7 +24,20 @@ export type CartContextData = {
   loading: boolean
 }
 
-export const CartContext = createContext({} as CartContextData)
+export const CartContextDefaultValues = {
+  items: [],
+  quantity: 0,
+  total: '$0.00',
+  isInCart: () => false,
+  addToCart: () => null,
+  removeFromCart: () => null,
+  clearCart: () => null,
+  loading: false
+}
+
+export const CartContext = createContext<CartContextData>(
+  CartContextDefaultValues
+)
 
 export type CartProviderProps = {
   children: React.ReactNode
